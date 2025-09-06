@@ -26,7 +26,7 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 Para salvar as configurações atuais no repositório:
 
 ```bash
-chmod +x backup.sh
+chmod +x dotfiles.sh
 ./backup.sh
 ````
 
