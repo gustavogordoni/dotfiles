@@ -1,4 +1,4 @@
-# Dotfiles
+# Meus dotfiles
 
 Repositório com minhas configurações pessoais do Linux Mint 22.2.  
 Inclui scripts para **backup** e **restauração** de dotfiles.
