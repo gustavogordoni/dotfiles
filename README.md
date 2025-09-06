@@ -7,7 +7,7 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ## Estrutura
 
-- `backup.sh` → copia as configurações atuais do sistema para este repositório.
+- `dotfiles.sh` → copia as configurações atuais do sistema para este repositório.
 - `install.sh` → aplica as configurações deste repositório no sistema.
 - Pastas incluídas:
   - `tmux/` → configurações do [tmux](https://github.com/tmux/tmux)
