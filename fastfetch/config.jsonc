@@ -8,7 +8,7 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "kitty",
-    "source": "$HOME/Imagens/ascii/hashcat.png",
+    "source": "$HOME/.config/fastfetch/hashcat.png",
     "padding": {
       "top": 3,
       "right": 4,
@@ -25,6 +25,7 @@
       "key": "╭──────────────╮",
       "type": "custom"
     },
+
     {
       "key": "│ {#31} user       {#keys}│",
       "type": "title",
@@ -35,79 +36,30 @@
       "type": "title",
       "format": "{host-name}"
     },
-    {
-      "key": "│ {#33}󰅐 uptime     {#keys}│",
-      "type": "uptime"
-    },
-    {
-      "key": "│ {#34}{icon} distro     {#keys}│",
-      "type": "os"
-    },
-    {
-      "key": "│ {#35} kernel     {#keys}│",
-      "type": "kernel"
-    },
-    {
-      "key": "│ {#36}󰒓 packages   {#keys}│",
-      "type": "packages"
-    },
-    {
-      "key": "│ {#31} shell      {#keys}│",
-      "type": "shell"
-    },
-    {
-      "key": "│ {#32} terminal   {#keys}│",
-      "type": "terminal"
-    },
-    {
-      "key": "│ {#33}󰇄 desktop    {#keys}│",
-      "type": "de"
-    },
-    {
-      "key": "│ {#34}󰖳 wm         {#keys}│",
-      "type": "wm"
-    },
+    { "key": "│ {#33}󰅐 uptime     {#keys}│", "type": "uptime" },
+    { "key": "│ {#34}{icon} distro     {#keys}│", "type": "os" },
+    { "key": "│ {#35} kernel     {#keys}│", "type": "kernel" },
+    { "key": "│ {#36}󰒓 packages   {#keys}│", "type": "packages" },
+    { "key": "│ {#31} shell      {#keys}│", "type": "shell" },
+    { "key": "│ {#32} terminal   {#keys}│", "type": "terminal" },
+    { "key": "│ {#33}󰇄 desktop    {#keys}│", "type": "de" },
+    { "key": "│ {#34}󰖳 wm         {#keys}│", "type": "wm" },
     // { "key": "│ {#35}󰣆 wm theme   {#keys}│", "type": "wmtheme" },
-    {
-      "key": "│ {#36}󰉼 theme      {#keys}│",
-      "type": "theme"
-    },
-    {
-      "key": "│ {#31}󰘧 icons      {#keys}│",
-      "type": "icons"
-    },
-    {
-      "key": "│ {#32}󰛖 font       {#keys}│",
-      "type": "font"
-    },
-    {
-      "key": "│ {#33}󰇅 cursor     {#keys}│",
-      "type": "cursor"
-    },
+    { "key": "│ {#36}󰉼 theme      {#keys}│", "type": "theme" },
+    { "key": "│ {#31}󰘧 icons      {#keys}│", "type": "icons" },
+    { "key": "│ {#32}󰛖 font       {#keys}│", "type": "font" },
+    { "key": "│ {#33}󰇅 cursor     {#keys}│", "type": "cursor" },
     {
       "key": "│ {#34}󰍛 cpu        {#keys}│",
       "type": "cpu",
       "showPeCoreCount": true
     },
-    {
-      "key": "│ {#35}󰢮 gpu        {#keys}│",
-      "type": "gpu"
-    },
-    {
-      "key": "│ {#36} memory     {#keys}│",
-      "type": "memory"
-    },
-    {
-      "key": "│ {#31}󰉉 disk       {#keys}│",
-      "type": "disk",
-      "folders": "/"
-    },
+    { "key": "│ {#35}󰢮 gpu        {#keys}│", "type": "gpu" },
+    { "key": "│ {#36} memory     {#keys}│", "type": "memory" },
+    { "key": "│ {#31}󰉉 disk       {#keys}│", "type": "disk", "folders": "/" },
     // { "key": "│ {#32}󰍹 board      {#keys}│", "type": "board" },
     // { "key": "│ {#33}󰌢 bios       {#keys}│", "type": "bios" },
-    {
-      "key": "│ {#34}󰂯 display    {#keys}│",
-      "type": "display"
-    },
+    { "key": "│ {#34}󰂯 display    {#keys}│", "type": "display" },
     {
       "key": "│ {#35}󰩟 network    {#keys}│",
       "type": "localip",
@@ -118,22 +70,14 @@
       "type": "battery",
       "format": "{capacity} [{status}]"
     },
-    {
-      "key": "│ {#31}󰏖 swap       {#keys}│",
-      "type": "swap"
-    },
-    {
-      "key": "│ {#32}󰗊 locale     {#keys}│",
-      "type": "locale"
-    },
+    { "key": "│ {#31}󰏖 swap       {#keys}│", "type": "swap" },
+    { "key": "│ {#32}󰗊 locale     {#keys}│", "type": "locale" },
     {
       "key": "│ {#39} colors     {#keys}│",
       "type": "colors",
       "symbol": "circle"
     },
-    {
-      "key": "╰──────────────╯",
-      "type": "custom"
-    }
+
+    { "key": "╰──────────────╯", "type": "custom" }
   ]
 }
