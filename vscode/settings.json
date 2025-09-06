@@ -1,0 +1,78 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "git.ignoreMissingGitWarning": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true
+  },
+  "[php]": {
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.minimap.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.codeActionsOnSave": {},
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.indentation": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.guides.highlightActiveBracketPair": true,
+  "editor.language.brackets": [
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ],
+    [
+      "{",
+      "}"
+    ]
+  ],
+  "editor.fontSize": 20,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingDelete": "always",
+  "window.titleBarStyle": "custom",
+  "editor.stickyScroll.enabled": true,
+  "editor.mouseWheelZoom": true,
+  "explorer.compactFolders": false,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "workbench.settings.applyToAllProfiles": [
+    "editor.fontFamily"
+  ],
+  "window.customTitleBarVisibility": "auto",
+  "workbench.editor.openSideBySideDirection": "down",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.autoSave": "onWindowChange",
+  "emmet.includeLanguages": {
+    "erb": "html",
+    "html.erb": "html",
+    "vue": "html",
+    "blade.php": "html"
+  },
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "*.blade.php": "html"
+  },
+  "git.autofetch": true,
+  "workbench.panel.showLabels": false,
+  "chat.commandCenter.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "editor.allowVariableFonts": false,
+  "terminal.integrated.fontFamily": "JetBrains Nerd Font",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.location": "bottom",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.sideBar.location": "right",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.wordWrap": "on"
+}
