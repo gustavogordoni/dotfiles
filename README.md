@@ -27,7 +27,7 @@ Para salvar as configurações atuais no repositório:
 
 ```bash
 chmod +x dotfiles.sh
-./backup.sh
+./dotfiles.sh
 ````
 
 Os arquivos serão copiados para as pastas correspondentes dentro do repositório.
