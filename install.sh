@@ -20,6 +20,4 @@ cp -r ./nvim/* ~/.config/nvim/
 cp -r ./vscode/settings.json ~/.config/Code/User/
 cp -r ./crankshaft/* ~/.config/crankshaft/config/
 
-fc-cache -fv
-
 echo "Restauração das configurações concluída!"
