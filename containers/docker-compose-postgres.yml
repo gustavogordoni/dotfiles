@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postdba
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/dev/Containers/postgres:/var/lib/postgresql/data
+  
+  pgadmin:
+    image: dpage/pgadmin4:8.10
+    container_name: pgadmin
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: postdba
+    ports:
+      - 8080:80
+    volumes:
+      - ~/dev/Containers/pgadmin:/var/lib/pgadmin/storage
+      #- /media/live/GORDONI/sql:/home/sql/
+  
+networks:
+  default:
+    name: local-network
+    external: true

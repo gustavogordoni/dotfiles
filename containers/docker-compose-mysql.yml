@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mydba
+      MYSQL_DATABASE: dbGustavo
+      MYSQL_PASSWORD: mydba
+      MYSQL_USER: aluno
+    networks:
+      - mysql-phpmyadmin
+    ports:
+      - 3306:3306
+    volumes:
+      - ~/dev/Containers/mysql:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 9090:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: mydba
+    networks:
+      - mysql-phpmyadmin
+
+networks:
+  mysql-phpmyadmin:

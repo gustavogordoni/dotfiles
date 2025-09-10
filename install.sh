@@ -6,6 +6,7 @@ mkdir -p ~/.config/fastfetch
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/Code/User
 mkdir -p ~/.config/crankshaft/config/
+mkdir -p ~/dev/Containers/
 
 # home
 cp -r ./tmux/.tmux.conf ~/
@@ -19,5 +20,6 @@ cp -r ./fastfetch/* ~/.config/fastfetch/
 cp -r ./nvim/* ~/.config/nvim/
 cp -r ./vscode/settings.json ~/.config/Code/User/
 cp -r ./crankshaft/* ~/.config/crankshaft/config/
+cp -r ./containers/* ~/dev/Containers/
 
 echo "Restauração das configurações concluída!"

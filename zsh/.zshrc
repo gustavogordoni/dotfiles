@@ -154,6 +154,11 @@ alias upgrade='sudo apt upgrade'
 alias autoremove='sudo apt autoremove'
 alias install='sudo apt install'
 alias lazydocker='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
+alias python='python3'
+alias ngrok='docker compose -f /home/gustavo/dev/Containers/ngrok/docker-compose.yml run --rm ngrok'
+alias ngrok-static='docker compose -f /home/gustavo/dev/Containers/ngrok/docker-compose-static.yml run --rm ngrok'
+
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
