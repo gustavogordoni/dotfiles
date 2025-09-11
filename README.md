@@ -26,7 +26,7 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 Para salvar as configurações atuais no repositório:
 
 ```bash
-chmod +x dotfiles.sh
+chmod u+x dotfiles.sh
 ./dotfiles.sh
 ````
 
@@ -39,7 +39,7 @@ Os arquivos serão copiados para as pastas correspondentes dentro do repositóri
 Para aplicar as configurações deste repositório em um sistema:
 
 ```bash
-chmod +x install.sh
+chmod u+x install.sh
 ./install.sh
 ```
 
