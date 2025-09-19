@@ -24,7 +24,7 @@ services:
       - 8080:80
     volumes:
       - ~/dev/Containers/pgadmin:/var/lib/pgadmin/storage
-      #- /media/live/GORDONI/sql:/home/sql/
+      #- /media/live/GORDONI/3° INFO/LPB-3/sql/:/home/sql/
   
 networks:
   default:

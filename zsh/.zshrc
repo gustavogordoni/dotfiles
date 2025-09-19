@@ -157,7 +157,8 @@ alias lazydocker='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.so
 alias python='python3'
 alias ngrok='docker compose -f /home/gustavo/dev/Containers/ngrok/docker-compose.yml run --rm ngrok'
 alias ngrok-static='docker compose -f /home/gustavo/dev/Containers/ngrok/docker-compose-static.yml run --rm ngrok'
-
+alias sqlmap='python3 /home/gustavo/.config/sqlmap/sqlmap.py'
+alias scan='/home/gustavo/dev/pentest/scanweb.sh'
 
 
 export NVM_DIR="$HOME/.nvm"

@@ -1,7 +1,7 @@
 {
   "workbench.iconTheme": "material-icon-theme",
   "git.ignoreMissingGitWarning": true,
-  
+
   "[php]": {
     "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
     "editor.formatOnSave": true
@@ -16,18 +16,9 @@
   "editor.guides.highlightActiveIndentation": true,
   "editor.guides.highlightActiveBracketPair": true,
   "editor.language.brackets": [
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ],
-    [
-      "{",
-      "}"
-    ]
+    ["[", "]"],
+    ["(", ")"],
+    ["{", "}"]
   ],
   "editor.fontSize": 20,
   "editor.autoClosingBrackets": "always",
@@ -38,9 +29,7 @@
   "explorer.compactFolders": false,
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
-  "workbench.settings.applyToAllProfiles": [
-    "editor.fontFamily"
-  ],
+  "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
   "window.customTitleBarVisibility": "auto",
   "workbench.editor.openSideBySideDirection": "down",
   "liveServer.settings.donotShowInfoMsg": true,
@@ -80,6 +69,61 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "markdown.marp.themes": [
+    // "./beam.css",
+    // "./border.css",
+    // "./gradient.css",
+    // "./graph_paper.css",
+    "./*.css",
+
+
+    "./themes/academic.css",
+
+    "./style/arendt.css",
+    "./style/descartes.css",
+    "./style/einstein.css",
+    "./style/freud.css",
+    "./style/godel.css",
+    "./style/hegel.css",
+    "./style/heidegger.css",
+    "./style/hume.css",
+    "./style/husserl.css",
+    "./style/jobs.css",
+    "./style/kant.css",
+    "./style/king.css",
+    "./style/leibniz.css",
+    "./style/orwell.css",
+    "./style/pascal.css",
+    "./style/plato.css",
+    "./style/schema.css",
+    "./style/simple.css",
+    "./style/socrates.css",
+    "./style/structure.css",
+    "./style/turing.css",
+    "./style/weber.css",
+    //"./style/*.css",
+
+
+    "./css/*.css",
+    
+    "./css/neobeam.css",
+    "./css/neobeam-ecobeam.css",
+
+    "./dracula/dracula.css",
+
+    "./transtions/*.scss",
+
+    "./tux/css/neobeam.css",
+    "./tux/css/neobeam-ecobeam.css",
+    "./tux/css/neobeam-ecobeam-grid.css",
+
+    "./tum-marp-template/themes/tum.css"
+  ],
+  "markdown.marp.exportType": "html",
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
