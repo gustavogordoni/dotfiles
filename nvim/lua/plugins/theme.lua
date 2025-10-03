@@ -1,0 +1,1 @@
+/home/gordoni/.config/omarchy/current/theme/neovim.lua

@@ -1,23 +1,23 @@
 # Meus dotfiles
 
-Repositório com minhas configurações pessoais do Linux Mint 22.2.  
+Repositório com minhas configurações pessoais do Omarchy v3.0.2.  
 Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ---
 
 ## Estrutura
 
-- `dotfiles.sh` → copia as configurações atuais do sistema para este repositório.
-- `install.sh` → aplica as configurações deste repositório no sistema.
+- `export.sh` → copia as configurações atuais do sistema para este repositório.
+- `import.sh` → aplica as configurações deste repositório no sistema.
 - Pastas incluídas:
-  - `tmux/` → configurações do [tmux](https://github.com/tmux/tmux)
+  <!-- - `tmux/` → configurações do [tmux](https://github.com/tmux/tmux) -->
   - `zsh/` → configurações do [zsh](https://www.zsh.org/)
   - `powerlevel10k/` → tema do [powerlevel10k](https://github.com/romkatv/powerlevel10k)
   - `nvim/` → configuração do [Neovim](https://neovim.io/)
   - `vscode/` → configurações do [Visual Studio Code](https://code.visualstudio.com/)
-  - `ghostty/` → terminal [Ghostty](https://ghostty.org/)
+  <!-- - `ghostty/` → terminal [Ghostty](https://ghostty.org/) -->
   - `fastfetch/` → utilitário de [fetch](https://github.com/fastfetch-cli/fastfetch) (alternativa ao neofetch)
-  - `crankshaft/` → configs do [Crankshaft](https://github.com/KraXen72/crankshaft)
+  <!-- - `crankshaft/` → configs do [Crankshaft](https://github.com/KraXen72/crankshaft) -->
   - `containers/` → arquivos docker-compose dos serviços:
     - [MySQL](https://hub.docker.com/layers/library/mysql/8.0/images/sha256-2ffdae66a52f43285d85feee74d706b625486148f06184b8968962df921f49bc)
     - [phpmyadmin](https://hub.docker.com/layers/library/phpmyadmin/latest/images/sha256-6e8d3ad107917937fcade73cbab0c614a802e8238031c5f50c0ddd8fcc451b4e)
@@ -32,8 +32,8 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 Para salvar as configurações atuais no repositório:
 
 ```bash
-chmod u+x dotfiles.sh
-./dotfiles.sh
+chmod u+x export.sh
+./export.sh
 ````
 
 Os arquivos serão copiados para as pastas correspondentes dentro do repositório.
@@ -45,8 +45,8 @@ Os arquivos serão copiados para as pastas correspondentes dentro do repositóri
 Para aplicar as configurações deste repositório em um sistema:
 
 ```bash
-chmod u+x install.sh
-./install.sh
+chmod u+x import.sh
+./import.sh
 ```
 
 Isso irá copiar os arquivos para os diretórios corretos.

@@ -1,5 +1,0 @@
-# Welcome to the filters file! Filters follow the URL pattern format:
-# https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns
-# Hashtags are used for comments, and each line is a new filter.
-# Here's an example of a filter that blocks the cosmetic bundle popup audio:
-# *://assets.krunker.io/sound/bundle_*.mp3*

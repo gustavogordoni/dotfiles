@@ -1,4 +1,5 @@
 {
+  "workbench.colorTheme": "Modern Purple Theme",
   "workbench.iconTheme": "material-icon-theme",
   "git.ignoreMissingGitWarning": true,
 
@@ -30,7 +31,7 @@
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
-  "window.customTitleBarVisibility": "auto",
+  "window.customTitleBarVisibility": "never",
   "workbench.editor.openSideBySideDirection": "down",
   "liveServer.settings.donotShowInfoMsg": true,
   "files.autoSave": "onWindowChange",
@@ -125,5 +126,6 @@
   "markdown.marp.exportType": "html",
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "chat.disableAIFeatures": true,
 }
