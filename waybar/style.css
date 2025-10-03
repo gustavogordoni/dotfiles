@@ -1,7 +1,7 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
+  /* background-color: @background; */
   color: @foreground;
 
   border: none;
@@ -11,12 +11,21 @@
   font-size: 12px;
 }
 
-.modules-left {
-  margin-left: 8px;
+window#waybar {
+  background: transparent;
+  margin-top: 10px;
 }
 
-.modules-right {
-  margin-right: 8px;
+window#waybar.empty #window{
+  background: transparent;
+  color: transparent;
+  padding: 0;
+  margin-left: 5;
+  transition: .5s;
+}
+
+mpris.empty {
+  background: transparent;
 }
 
 #workspaces button {
@@ -30,6 +39,7 @@
   opacity: 0.5;
 }
 
+#backlight, #custom-weather, #memory, #mpris, #window,
 #tray,
 #cpu,
 #battery,
@@ -39,8 +49,12 @@
 #custom-omarchy,
 #custom-screenrecording-indicator,
 #custom-update {
+  background-color: @background;
   min-width: 12px;
-  margin: 0 7.5px;
+
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0 0 0 5;
 }
 
 #custom-expand-icon {
@@ -56,7 +70,10 @@ tooltip {
 }
 
 #clock {
-  margin-left: 8.75px;
+  background-color: @background;
+
+  border-radius: 10px;
+  padding: 0 10 0 10;
 }
 
 .hidden {
@@ -67,8 +84,37 @@ tooltip {
   min-width: 12px;
   margin-left: 8.75px;
   font-size: 10px;
+
+  padding: 0 11 0 10;
 }
 
 #custom-screenrecording-indicator.active {
   color: #a55555;
+}
+
+
+/* EXTRA FIX! */
+#workspaces {
+  background-color: @background;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding: 0 5 0 5;
+}
+#tray-expander {
+  background-color: @background;
+  border-radius: 10px;
+  padding: 0 0 0 10;
+}
+#pulseaudio {
+  padding: 0 15 0 10;
+}
+#tray {
+  margin: 0; 
+}
+#mpris {
+  margin-right: 5px;
+}
+
+tooltip {
+  border-radius: 10px;
 }

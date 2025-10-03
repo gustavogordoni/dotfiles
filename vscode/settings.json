@@ -128,4 +128,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "chat.disableAIFeatures": true,
+  "git.enableSmartCommit": true,
 }
