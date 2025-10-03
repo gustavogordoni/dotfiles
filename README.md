@@ -29,6 +29,16 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
   
 ---
 
+## Instalaçãp
+
+Clone o repositório e acesse o diretório
+```bash
+git clone -b omarchy https://github.com/gustavogordoni/dotfiles dotfiles-omarchy
+cd dotfiles-omarchy
+```
+
+---
+
 ## Backup
 
 Para salvar as configurações atuais no repositório:
