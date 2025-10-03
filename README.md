@@ -27,6 +27,16 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
   
 ---
 
+## Instalaçãp
+
+Clone o repositório e acesse o diretório
+```bash
+git clone -b mint https://github.com/gustavogordoni/dotfiles dotfiles-mint
+cd dotfiles-mint
+```
+
+---
+
 ## Backup
 
 Para salvar as configurações atuais no repositório:
