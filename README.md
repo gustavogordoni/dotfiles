@@ -10,14 +10,16 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 - `export.sh` → copia as configurações atuais do sistema para este repositório.
 - `import.sh` → aplica as configurações deste repositório no sistema.
 - Pastas incluídas:
-  <!-- - `tmux/` → configurações do [tmux](https://github.com/tmux/tmux) -->
   - `zsh/` → configurações do [zsh](https://www.zsh.org/)
   - `powerlevel10k/` → tema do [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+  - `hypr/` → configuração do [Hyprland](https://hyprland.org/)
+  - `waybar/` → configuração do [Waybar](https://github.com/Alexays/Waybar)
+  - `walker/` → launcher [walker](https://github.com/abenz1267/walker)
+  - `alacritty/` → terminal [Alacritty](https://alacritty.org/)
+  - `uwsm/` → configurações do [UWsm](https://github.com/Vladimir-csp/uwsm)
   - `nvim/` → configuração do [Neovim](https://neovim.io/)
   - `vscode/` → configurações do [Visual Studio Code](https://code.visualstudio.com/)
-  <!-- - `ghostty/` → terminal [Ghostty](https://ghostty.org/) -->
   - `fastfetch/` → utilitário de [fetch](https://github.com/fastfetch-cli/fastfetch) (alternativa ao neofetch)
-  <!-- - `crankshaft/` → configs do [Crankshaft](https://github.com/KraXen72/crankshaft) -->
   - `containers/` → arquivos docker-compose dos serviços:
     - [MySQL](https://hub.docker.com/layers/library/mysql/8.0/images/sha256-2ffdae66a52f43285d85feee74d706b625486148f06184b8968962df921f49bc)
     - [phpmyadmin](https://hub.docker.com/layers/library/phpmyadmin/latest/images/sha256-6e8d3ad107917937fcade73cbab0c614a802e8238031c5f50c0ddd8fcc451b4e)
