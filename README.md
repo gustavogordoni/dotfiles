@@ -3,6 +3,8 @@
 Repositório com minhas configurações pessoais do Omarchy v3.0.2.  
 Inclui scripts para **backup** e **restauração** de dotfiles.
 
+> Confira também minhas configurações para o [Linux Mint 22.2](https://github.com/gustavogordoni/dotfiles/tree/mint).
+
 ---
 
 ## Estrutura
