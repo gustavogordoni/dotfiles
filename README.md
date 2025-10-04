@@ -3,7 +3,30 @@
 Repositório com minhas configurações pessoais do Omarchy v3.0.2.  
 Inclui scripts para **backup** e **restauração** de dotfiles.
 
-> Confira também minhas configurações para o [Linux Mint 22.2](https://github.com/gustavogordoni/dotfiles/tree/mint).
+> **Confira também:**
+> * Minhas configurações para o [Linux Mint 22.2](https://github.com/gustavogordoni/dotfiles/tree/mint).
+> * O tema [Gordoni](https://github.com/gustavogordoni/omarchy-gordoni-theme) que desenvolvi para o Omarchy.
+
+---
+
+## Screenshots
+
+![Gordoni 3](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/3.png)
+![Gordoni 9](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/9.png)
+
+<details>
+<summary><strong>Veja mais</strong></summary>
+
+<br>
+
+![Gordoni 4](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/4.png)
+![Gordoni 5](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/5.png)
+![Gordoni 8](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/8.png)
+![Gordoni 10](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/10.png)
+![Gordoni 11](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/11.png)
+![Gordoni 12](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/12.png)
+
+</details>
 
 ---
 
