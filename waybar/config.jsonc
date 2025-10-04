@@ -1,6 +1,6 @@
 {
   "reload_style_on_change": true,
-  "layer": "top",
+  "layer": "left",
   "position": "top",
   "spacing": 0,
   "height": 16,
@@ -11,14 +11,21 @@
 
   // "modules-left": ["custom/omarchy", "hyprland/workspaces", "hyprland/window"],
   "modules-left": ["custom/omarchy", "hyprland/workspaces"],
-  "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
+
+  "modules-center": [
+    "clock",
+    "custom/update",
+    "custom/screenrecording-indicator"
+  ],
   "modules-right": [
-    // "mpris",
-    "group/tray-expander",
+    // "group/tray-expander",
+    "mpris",
+    "custom/usb",
     "backlight",
     "network",
     "bluetooth",
     "pulseaudio",
+    "memory",
     "cpu",
     "battery"
   ],
@@ -48,8 +55,8 @@
   },
   "custom/omarchy": {
     "format": "<span font='omarchy'>\ue900</span>",
-    "on-click": "omarchy-menu",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    "on-click": "omarchy-menu System",
+    "tooltip-format": "Omarchy Menu\n\nSuper + Escape"
   },
   "custom/update": {
     "format": "",
@@ -62,9 +69,10 @@
 
   "cpu": {
     "interval": 5,
-    "format": "󰍛",
+    "format": "󰍛 {load}",
     "on-click": "$TERMINAL -e btop"
   },
+
   "clock": {
     "format": "{:%H:%M}",
     "format-alt": "{:L%A %d/%m/%Y}",
@@ -76,15 +84,17 @@
       "format": {
         "mouth": "<span color='#ffead3'><b>{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>",
-      },
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
     },
     "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon} {essid}",
-    "format-wifi": "{icon} {essid}",
+    // "format": "{icon} {essid}",
+    "format": "{icon}",
+    // "format-wifi": "{icon} {essid}",
+    "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
@@ -153,18 +163,31 @@
     "icon-size": 12,
     "spacing": 12
   },
-  
+
   //EXTRA MODULES!
+  // "backlight": {
+  //     "device": "intel_backlight",
+  //     // "format": "{icon} {percent}% ",
+  //     "format": "{percent}%",
+  //     "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+  // },
+
   "backlight": {
-      "device": "intel_backlight",
-      "format": "{icon} {percent}% ",
-      "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+    "format": "{icon} {percent}%",
+    "format-icons": [""]
+  },
+
+  "custom/usb": {
+    "exec": "~/.config/waybar/scripts/usb_monitor.sh",
+    "interval": 0,
+    "on-click": "~/.config/waybar/scripts/usb_eject.sh",
+    "tooltip": false
   },
 
   "memory": {
-      "format": " {used:0.1f}gb",
-      "interval": 2,
-      "on-click": "$TERMINAL -e btop"
+    "format": "  {used:0.1f} GB",
+    "interval": 2,
+    "on-click": "$TERMINAL -e btop"
   },
 
   "custom/weather": {
@@ -176,11 +199,13 @@
   },
 
   "mpris": {
-    "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+    // "format": "{player_icon} {artist} - {title}",
+    "format": "{player_icon} {artist}",
+    // "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+    "format-paused": "{status_icon} <i>{artist}</i>",
     "player-icons": {
-      "default": "🎵",
-      "mpv": "🎵"
+      "default": "▶",
+      "mpv": "▶"
     },
     "status-icons": {
       "paused": "⏸"
