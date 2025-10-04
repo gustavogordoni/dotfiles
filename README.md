@@ -29,7 +29,7 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
   
 ---
 
-## Instalaçãp
+## Instalação
 
 Clone o repositório e acesse o diretório
 ```bash
