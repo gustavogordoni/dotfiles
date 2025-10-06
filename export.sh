@@ -15,6 +15,7 @@ mkdir -p ./containers
 
 # home
 cp -r ~/.zshrc ./zsh/
+cp -r ~/.oh-my-zsh/custom/aliases.zsh ./zsh/aliases.zsh
 cp -r ~/.p10k.zsh ./powerlevel10k/
 cp -r ~/.XCompose ./
 

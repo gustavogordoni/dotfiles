@@ -10,9 +10,11 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/Code/User
 mkdir -p ~/.config/fastfetch
 mkdir -p ~/dev/Containers
+mkdir -p ~/.oh-my-zsh/custom/
 
 # home
 cp -r ./zsh/.zshrc ~/
+cp -r ./zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 cp -r ./powerlevel10k/.p10k.zsh ~/
 cp -r ./.XCompose ~/
 
