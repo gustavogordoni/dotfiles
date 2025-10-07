@@ -6,12 +6,13 @@ mkdir -p ./waybar
 mkdir -p ./walker
 mkdir -p ./alacritty
 mkdir -p ./uwsm
+mkdir -p ./omarchy/branding
 mkdir -p ./zsh
 mkdir -p ./powerlevel10k
 mkdir -p ./nvim
 mkdir -p ./vscode
 mkdir -p ./fastfetch
-mkdir -p ./containers
+mkdir -p ./containers/ngrok
 
 # home
 cp -r ~/.zshrc ./zsh/
@@ -25,6 +26,7 @@ cp -r ~/.config/waybar/* ./waybar/
 cp -r ~/.config/walker/* ./walker/
 cp -r ~/.config/alacritty/* ./alacritty/
 cp -r ~/.config/uwsm/* ./uwsm/
+cp -r ~/.config/omarchy/branding/* ./omarchy/branding/
 
 # Extras
 cp -r ~/.config/nvim/* ./nvim/
@@ -33,6 +35,8 @@ cp -r ~/.config/fastfetch/* ./fastfetch/
 cp ~/.config/omarchy/branding/about.txt ./fastfetch/
 
 # Containers
-rsync -av  --exclude 'ngrok/.env' --exclude 'mysql' --exclude 'postgres' --exclude 'pgadmin' ~/dev/Containers/ ./containers/
+cp -r ~/dev/Containers/*.yml ./containers/
+cp -r ~/dev/Containers/ngrok/*.yml ./containers/ngrok
+cp -r ~/dev/Containers/ngrok/.env.example ./containers/ngrok/
 
 echo "Cópia das configurações realizada com sucesso!"

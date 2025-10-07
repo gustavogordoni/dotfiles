@@ -11,6 +11,7 @@ mkdir -p ~/.config/Code/User
 mkdir -p ~/.config/fastfetch
 mkdir -p ~/dev/Containers
 mkdir -p ~/.oh-my-zsh/custom/
+mkdir -p ~/.config/omarchy/branding/
 
 # home
 cp -r ./zsh/.zshrc ~/
@@ -24,6 +25,7 @@ cp -r ./waybar/* ~/.config/waybar/
 cp -r ./walker/* ~/.config/walker/
 cp -r ./alacritty/* ~/.config/alacritty/
 cp -r ./uwsm/* ~/.config/uwsm/
+cp -r ./omarchy/branding/* ~/.config/omarchy/branding/
 
 # Extras
 cp -r ./nvim/* ~/.config/nvim/
