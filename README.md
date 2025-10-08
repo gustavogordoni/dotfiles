@@ -11,8 +11,13 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ## Screenshots
 
+![Screensaver](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/screensaver.gif)
+
+</div>
+
 ![Gordoni 3](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/3.png)
 ![Gordoni 9](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/9.png)
+![Hyprlock](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/hyprlock.png)
 
 <details>
 <summary><strong>Veja mais</strong></summary>
