@@ -11,6 +11,8 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ## Screenshots
 
+<div align="center">
+
 ![Screensaver](https://github.com/gustavogordoni/omarchy-gordoni-theme/blob/main/screenshots/screensaver.gif)
 
 </div>
