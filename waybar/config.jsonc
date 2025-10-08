@@ -19,8 +19,8 @@
   ],
   "modules-right": [
     // "group/tray-expander",
-    "mpris",
     "custom/usb",
+    "mpris",
     "backlight",
     "network",
     "bluetooth",
