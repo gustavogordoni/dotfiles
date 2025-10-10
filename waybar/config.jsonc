@@ -39,7 +39,8 @@
       "title<.*YouTube.*>": "  ",
       "class<firefox>": "  ",
       "class<alacritty>": "  ",
-      "class<code>": " 󰨞 ",      
+      "class<code>": " 󰨞 ",     
+      "<.*github.*>": "  " ,
       "title<.*Discord.*>": "  ",
       "class<chromium>": "  ",
       "class<org.gnome.Nautilus>": "  "
