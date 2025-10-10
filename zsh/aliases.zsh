@@ -47,3 +47,5 @@ alias ngrok-static='docker compose -f /home/gordoni/dev/Containers/ngrok/docker-
 alias scan='/home/gordoni/dev/pentest/scanweb.sh'
 alias java-listar-versao='archlinux-java status'
 alias java-alterar-versao='sudo archlinux-java set'
+
+alias setoolkit='sudo python3 ~/.config/setoolkit/setoolkit'

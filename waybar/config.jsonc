@@ -30,8 +30,20 @@
     "battery"
   ],
   "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "on-click": "activate",
-    "format": "{icon}",
+    "format": "{icon}{windows}",
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "title<.*YouTube.*>": "  ",
+      "class<firefox>": "  ",
+      "class<alacritty>": "  ",
+      "class<code>": " 󰨞 ",      
+      "title<.*Discord.*>": "  ",
+      "class<chromium>": "  ",
+      "class<org.gnome.Nautilus>": "  "
+    },
     "format-icons": {
       "default": "",
       "1": "1",
