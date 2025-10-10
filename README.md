@@ -69,9 +69,14 @@ git clone -b omarchy https://github.com/gustavogordoni/dotfiles dotfiles-omarchy
 cd dotfiles-omarchy
 ```
 
+Dê permissão de execução para o arquivo reset.sh
+```bash
+chmod u+x reset.sh
+```
+
 ---
 
-## Backup
+## Exportar Configurações
 
 Para salvar as configurações atuais no repositório:
 
@@ -84,7 +89,7 @@ Os arquivos serão copiados para as pastas correspondentes dentro do repositóri
 
 ---
 
-## Restauração
+## Aplicar Configurações
 
 Para aplicar as configurações deste repositório em um sistema:
 

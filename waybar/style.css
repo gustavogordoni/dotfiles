@@ -94,7 +94,14 @@ tooltip {
 
 
 /* EXTRA FIX! */
-#workspaces {
+/* #workspaces {
+  background-color: @background;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding: 0 5 0 5;
+} */
+
+#workspaces button {
   background-color: @background;
   border-radius: 10px;
   margin-left: 5px;

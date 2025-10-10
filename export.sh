@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+./reset.sh
+
 # Criar diretórios de destino
 mkdir -p ./hypr
 mkdir -p ./waybar
