@@ -4,7 +4,7 @@
   /* background-color: @background; */
   color: @foreground;
 
-  border: none;
+  border: none;  
   border-radius: 0;
   min-height: 0;
   font-family: CaskaydiaMono Nerd Font;
@@ -106,6 +106,7 @@ tooltip {
   border-radius: 10px;
   margin-left: 5px;
   padding: 0 5 0 5;  
+  /* border: 1.15px solid #54577d; */
 }
 #tray-expander {
   background-color: @background;
@@ -124,4 +125,16 @@ tooltip {
 
 tooltip {
   border-radius: 10px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#workspaces button:hover {
+  border-color: #54577d;
+}
+
+#workspaces button.active {
+  border-color: #9a5ce6;
 }
