@@ -1,10 +1,10 @@
-{
+{    
   "update.mode": "none",
   "workbench.iconTheme": "material-icon-theme",
   "git.ignoreMissingGitWarning": true,
 
   "[php]": {
-    "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
     "editor.formatOnSave": true
   },
   "editor.minimap.enabled": false,
