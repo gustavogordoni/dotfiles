@@ -9,8 +9,8 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ## Estrutura
 
-- `dotfiles.sh` → copia as configurações atuais do sistema para este repositório.
-- `install.sh` → aplica as configurações deste repositório no sistema.
+- `export.sh` → copia as configurações atuais do sistema para este repositório.
+- `import.sh` → aplica as configurações deste repositório no sistema.
 - Pastas incluídas:
   - `tmux/` → configurações do [tmux](https://github.com/tmux/tmux)
   - `zsh/` → configurações do [zsh](https://www.zsh.org/)
@@ -44,8 +44,8 @@ cd dotfiles-mint
 Para salvar as configurações atuais no repositório:
 
 ```bash
-chmod u+x dotfiles.sh
-./dotfiles.sh
+chmod u+x export.sh
+./export.sh
 ````
 
 Os arquivos serão copiados para as pastas correspondentes dentro do repositório.
@@ -57,8 +57,8 @@ Os arquivos serão copiados para as pastas correspondentes dentro do repositóri
 Para aplicar as configurações deste repositório em um sistema:
 
 ```bash
-chmod u+x install.sh
-./install.sh
+chmod u+x import.sh
+./import.sh
 ```
 
 Isso irá copiar os arquivos para os diretórios corretos.
