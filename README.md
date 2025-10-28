@@ -1,6 +1,6 @@
 # Meus dotfiles
 
-Repositório com minhas configurações pessoais do Omarchy v3.0.2.  
+Repositório com minhas configurações pessoais do [Omarchy](https://omarchy.org/).  
 Inclui scripts para **backup** e **restauração** de dotfiles.
 
 > **Confira também:**
