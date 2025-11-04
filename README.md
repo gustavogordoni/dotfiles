@@ -79,4 +79,5 @@ O script `import.sh` aplica as configurações do repositório no sistema.
 * `1` → Importar tudo
 * Ou apenas um componente específico (Tmux, Fastfetch, VS Code, etc.)
 
-3. Os arquivos serão copiados para os diretórios corretos, como `~/.config/`, `~/dev/Containers/` etc.
+3. Os arquivos serão copiados para os diretórios correspondentes.
+> Exemplo: `./fastfetch/` → `~/.config/fastfetch/`
