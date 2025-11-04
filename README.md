@@ -35,67 +35,79 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 </details>
 
----
+## Estrutura do Repositório
 
-## Estrutura
+* `export.sh` → **exporta** (salva) as configurações atuais do sistema para o repositório
+* `import.sh` → **importa** (restaura) as configurações do repositório para o sistema
 
-- `export.sh` → copia as configurações atuais do sistema para este repositório.
-- `import.sh` → aplica as configurações deste repositório no sistema.
-- Pastas incluídas:
-  - `zsh/` → configurações do [zsh](https://www.zsh.org/)
-  - `powerlevel10k/` → tema do [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-  - `hypr/` → configuração do [Hyprland](https://hyprland.org/)
-  - `waybar/` → configuração do [Waybar](https://github.com/Alexays/Waybar)
-  - `walker/` → launcher [walker](https://github.com/abenz1267/walker)
-  - `alacritty/` → terminal [Alacritty](https://alacritty.org/)
-  - `uwsm/` → configurações do [UWsm](https://github.com/Vladimir-csp/uwsm)
-  - `nvim/` → configuração do [Neovim](https://neovim.io/)
-  - `vscode/` → configurações do [Visual Studio Code](https://code.visualstudio.com/)
-  - `fastfetch/` → utilitário de [fetch](https://github.com/fastfetch-cli/fastfetch) (alternativa ao neofetch)
-  - `containers/` → arquivos docker-compose dos serviços:
-    - [MySQL](https://hub.docker.com/layers/library/mysql/8.0/images/sha256-2ffdae66a52f43285d85feee74d706b625486148f06184b8968962df921f49bc)
-    - [phpmyadmin](https://hub.docker.com/layers/library/phpmyadmin/latest/images/sha256-6e8d3ad107917937fcade73cbab0c614a802e8238031c5f50c0ddd8fcc451b4e)
-    - [Postgres](https://hub.docker.com/layers/library/postgres/latest/images/sha256-032ddd16227ac678ba50c516ad328a22412883cce019b4a31948688ff2b741da)
-    - [PgAdmin](https://hub.docker.com/layers/dpage/pgadmin4/8.10/images/sha256-da70c1222eec67620a6259ab46a29b27e434181d20187d3a3a95ba6e647da500)
-    - [Ngrok](https://hub.docker.com/layers/ngrok/ngrok/latest/images/sha256-beb85e9dfde71d6522736c8e7343b61cfcec41aeb898707b1eec13d28df6165e)
-  
+### Pastas incluídas
+
+| Pasta            | Descrição                                                                |
+| ---------------- | ------------------------------------------------------------------------ |
+| `zsh/`           | Configurações do [ZSH](https://www.zsh.org/)                             |
+| `powerlevel10k/` | Tema do [Powerlevel10k](https://github.com/romkatv/powerlevel10k)        |
+| `hypr/`          | Configurações do [Hyprland](https://hyprland.org/)                       |
+| `waybar/`        | Configurações do [Waybar](https://github.com/Alexays/Waybar)             |
+| `walker/`        | Launcher [Walker](https://github.com/abenz1267/walker)                   |
+| `alacritty/`     | Terminal [Alacritty](https://alacritty.org/)                             |
+| `uwsm/`          | Configurações do [UWsm](https://github.com/Vladimir-csp/uwsm)            |
+| `nvim/`          | Configuração do [Neovim](https://neovim.io/)                             |
+| `vscode/`        | Configurações do [VS Code](https://code.visualstudio.com/)               |
+| `fastfetch/`     | Utilitário [Fastfetch](https://github.com/fastfetch-cli/fastfetch)       |
+| `containers/`    | Arquivos `docker-compose` para serviços (MySQL, PostgreSQL, Ngrok, etc.) |
+| `xcompose/`      | Arquivo `.XCompose` de composição de teclas personalizadas               |
+
 ---
 
 ## Instalação
 
-Clone o repositório e acesse o diretório
+1. Clone o repositório e acesse o diretório
 ```bash
 git clone -b omarchy https://github.com/gustavogordoni/dotfiles dotfiles-omarchy
 cd dotfiles-omarchy
 ```
 
-Dê permissão de execução para o arquivo reset.sh
+2. Dê permissão de execução para os seguintes arquivos
 ```bash
-chmod u+x reset.sh
+chmod u+x export.sh import.sh
 ```
 
 ---
 
 ## Exportar Configurações
 
-Para salvar as configurações atuais no repositório:
+O script `export.sh` copia suas configurações atuais do sistema para dentro do repositório.
 
-```bash
-chmod u+x export.sh
-./export.sh
-````
+1. **Execute o script:**
 
-Os arquivos serão copiados para as pastas correspondentes dentro do repositório.
+   ```bash
+   ./export.sh
+   ```
+
+2. **Escolha uma opção no menu:**
+
+   * `1` → Exportar tudo
+   * Ou selecione apenas o componente desejado (ZSH, Neovim, Waybar, etc.)
+
+3. Os arquivos serão copiados para as pastas correspondentes dentro do repositório.
+   > Exemplo: `~/.config/nvim/` → `./nvim/`
 
 ---
 
-## Aplicar Configurações
+## Importar Configurações
 
-Para aplicar as configurações deste repositório em um sistema:
+O script `import.sh` aplica as configurações do repositório no seu sistema.
 
-```bash
-chmod u+x import.sh
-./import.sh
-```
+1. **Execute o script:**
 
-Isso irá copiar os arquivos para os diretórios corretos.
+   ```bash
+   ./import.sh
+   ```
+
+2. **Escolha uma opção no menu:**
+
+   * `1` → Importar tudo
+   * Ou selecione apenas o componente desejado (Hyprland, Walker, Fastfetch, etc.)
+
+3. Os arquivos serão copiados para os diretórios correspondentes.
+   > Exemplo: `./hypr/` → `~/.config/hypr/`
