@@ -80,17 +80,17 @@ O script `export.sh` copia suas configurações atuais do sistema para dentro do
 
 1. **Execute o script:**
 
-   ```bash
-   ./export.sh
-   ```
+```bash
+./export.sh
+```
 
 2. **Escolha uma opção no menu:**
 
-   * `1` → Exportar tudo
-   * Ou selecione apenas o componente desejado (ZSH, Neovim, Waybar, etc.)
+* `1` → Exportar tudo
+* Ou selecione apenas o componente desejado (ZSH, Neovim, Waybar, etc.)
 
 3. Os arquivos serão copiados para as pastas correspondentes dentro do repositório.
-   > Exemplo: `~/.config/nvim/` → `./nvim/`
+> Exemplo: `~/.config/nvim/` → `./nvim/`
 
 ---
 
@@ -100,14 +100,14 @@ O script `import.sh` aplica as configurações do repositório no seu sistema.
 
 1. **Execute o script:**
 
-   ```bash
-   ./import.sh
-   ```
+```bash
+./import.sh
+```
 
 2. **Escolha uma opção no menu:**
 
-   * `1` → Importar tudo
-   * Ou selecione apenas o componente desejado (Hyprland, Walker, Fastfetch, etc.)
+* `1` → Importar tudo
+* Ou selecione apenas o componente desejado (Hyprland, Walker, Fastfetch, etc.)
 
 3. Os arquivos serão copiados para os diretórios correspondentes.
-   > Exemplo: `./hypr/` → `~/.config/hypr/`
+> Exemplo: `./hypr/` → `~/.config/hypr/`
