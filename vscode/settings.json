@@ -1,4 +1,4 @@
-{    
+{
   "update.mode": "none",
   "workbench.iconTheme": "material-icon-theme",
   "git.ignoreMissingGitWarning": true,
@@ -80,7 +80,6 @@
     // "./graph_paper.css",
     "./*.css",
 
-
     "./themes/academic.css",
 
     "./style/arendt.css",
@@ -107,9 +106,8 @@
     "./style/weber.css",
     //"./style/*.css",
 
-
     "./css/*.css",
-    
+
     "./css/neobeam.css",
     "./css/neobeam-ecobeam.css",
 
@@ -128,5 +126,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "chat.disableAIFeatures": true,
-  "git.enableSmartCommit": true,
+  "git.enableSmartCommit": true
 }

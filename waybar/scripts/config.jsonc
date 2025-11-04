@@ -92,7 +92,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛 {load}",
-    "on-click": "xdg-terminal-exec btop"
+    "on-click": "$TERMINAL -e btop"
   },
 
   "clock": {
@@ -154,7 +154,7 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
+    "on-click": "$TERMINAL --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -209,7 +209,7 @@
   "memory": {
     "format": "  {used:0.1f} GB",
     "interval": 2,
-    "on-click": "xdg-terminal-exec btop"
+    "on-click": "$TERMINAL -e btop"
   },
 
   "custom/weather": {
