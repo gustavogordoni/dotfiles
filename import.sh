@@ -1,88 +1,123 @@
 #!/bin/bash
 
+backup_if_exists() {
+  local target="$1"
+  local bak_target="${target}.bak"
+
+  if [ -e "$target" ]; then
+    echo "O caminho '$target' já existe."
+    read -rp "Deseja criar um backup em '${bak_target}'? [S/n]: " resp
+    resp=${resp:-S}
+    if [[ "$resp" =~ ^[SsYy]$ ]]; then
+      echo "Criando backup..."
+      if [ -d "$target" ]; then
+        cp -r "$target" "$bak_target"
+      else
+        cp "$target" "$bak_target"
+      fi
+      echo "Backup criado em '$bak_target'"
+    else
+      echo "Backup ignorado."
+    fi
+  fi
+}
+
 import_zsh() {
   echo "Importando ZSH..."
   mkdir -p ~/.oh-my-zsh/custom/
+  backup_if_exists ~/.zshrc
   cp -r ./zsh/.zshrc ~/
+  backup_if_exists ~/.oh-my-zsh/custom/aliases.zsh
   cp -r ./zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+  backup_if_exists ~/.p10k.zsh
   cp -r ./powerlevel10k/.p10k.zsh ~/
   echo "ZSH importado!"
 }
 
 import_hypr() {
   echo "Importando Hyprland..."
-  mkdir -p ~/.config/hypr
-  cp -r ./hypr/* ~/.config/hypr/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/hypr
+  cp -r ./hypr ~/.config/
   echo "Hypr importado!"
 }
 
 import_waybar() {
   echo "Importando Waybar..."
-  mkdir -p ~/.config/waybar
-  cp -r ./waybar/* ~/.config/waybar/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/waybar
+  cp -r ./waybar ~/.config/
   echo "Waybar importado!"
 }
 
 import_walker() {
   echo "Importando Walker..."
-  mkdir -p ~/.config/walker
-  cp -r ./walker/* ~/.config/walker/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/walker
+  cp -r ./walker ~/.config/
   echo "Walker importado!"
 }
 
 import_alacritty() {
   echo "Importando Alacritty..."
-  mkdir -p ~/.config/alacritty
-  cp -r ./alacritty/* ~/.config/alacritty/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/alacritty
+  cp -r ./alacritty ~/.config/
   echo "Alacritty importado!"
 }
 
 import_uwsm() {
   echo "Importando UWSM..."
-  mkdir -p ~/.config/uwsm
-  cp -r ./uwsm/* ~/.config/uwsm/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/uwsm
+  cp -r ./uwsm ~/.config/
   echo "UWSM importado!"
 }
 
 import_omarchy() {
   echo "Importando Omarchy Branding..."
-  mkdir -p ~/.config/omarchy/branding
-  cp -r ./omarchy/branding/* ~/.config/omarchy/branding/
+  mkdir -p ~/.config/omarchy
+  backup_if_exists ~/.config/omarchy/branding
+  cp -r ./omarchy/branding ~/.config/omarchy/
   echo "Omarchy importado!"
 }
 
 import_nvim() {
   echo "Importando Neovim..."
-  mkdir -p ~/.config/nvim
-  cp -r ./nvim/* ~/.config/nvim/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/nvim
+  cp -r ./nvim ~/.config/
   echo "Neovim importado!"
 }
 
 import_vscode() {
   echo "Importando VSCode..."
   mkdir -p ~/.config/Code/User
+  backup_if_exists ~/.config/Code/User/settings.json
   cp -r ./vscode/settings.json ~/.config/Code/User/
   echo "VSCode importado!"
 }
 
 import_fastfetch() {
   echo "Importando Fastfetch..."
-  mkdir -p ~/.config/fastfetch
-  cp -r ./fastfetch/* ~/.config/fastfetch/
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/fastfetch
+  cp -r ./fastfetch ~/.config/
   echo "Fastfetch importado!"
 }
 
 import_containers() {
   echo "Importando Containers..."
-  mkdir -p ~/dev/Containers
-  cp -r ./containers/* ~/dev/Containers/
+  mkdir -p ~/dev
+  backup_if_exists ~/dev/Containers
+  cp -r ./containers ~/dev/
   echo "Containers importados!"
 }
 
 import_xcompose() {
-  echo "Importando XCompose..."  
-  cp -r ./vscode/settings.json ~/.config/Code/User/
-  cp -r ./xcompose/.XCompose ~/.XCompose
+  echo "Importando XCompose..."
+  backup_if_exists ~/.XCompose
+  cp -r ./xcompose/.XCompose ~/
   echo "XCompose importado!"
 }
 
