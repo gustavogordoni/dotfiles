@@ -9,6 +9,11 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ## Estrutura do Repositório
 
+* `export.sh` → **exporta** (salva) as configurações atuais do sistema para o repositório
+* `import.sh` → **importa** (restaura) as configurações do repositório para o sistema
+
+### Pastas incluídas
+
 | Pasta | Descrição |
 |--------|------------|
 | `tmux/` | Configurações do [Tmux](https://github.com/tmux/tmux) |
