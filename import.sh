@@ -1,13 +1,25 @@
 #!/bin/bash
 
+has_walker() {
+  command -v walker &>/dev/null
+}
+
 backup_if_exists() {
   local target="$1"
   local bak_target="${target}.bak"
 
   if [ -e "$target" ]; then
     echo "O caminho '$target' já existe."
-    read -rp "Deseja criar um backup em '${bak_target}'? [S/n]: " resp
-    resp=${resp:-S}
+    local resp
+
+    if command -v walker &>/dev/null; then
+      resp=$(echo -e "Sim\nNão" | walker --dmenu --width 295 --minheight 1 --maxheight 200 -p "Criar backup de $(basename "$target")?" 2>/dev/null | tail -n 1)
+      [[ "$resp" == "Sim" ]] && resp="S" || resp="N"
+    else
+      read -rp "Deseja criar um backup em '${bak_target}'? [S/n]: " resp
+      resp=${resp:-S}
+    fi
+
     if [[ "$resp" =~ ^[SsYy]$ ]]; then
       echo "Criando backup..."
       if [ -d "$target" ]; then
@@ -32,6 +44,7 @@ import_zsh() {
   backup_if_exists ~/.p10k.zsh
   cp -r ./powerlevel10k/.p10k.zsh ~/
   echo "ZSH importado!"
+  notify-send "Configuração importada" "As configurações do ZSH foram definidas."
 }
 
 import_hypr() {
@@ -41,6 +54,7 @@ import_hypr() {
   cp -r ./hypr ~/.config/
   chmod -R u+x ~/.config/hypr/scripts
   echo "Hypr importado!"
+  notify-send "Configuração importada" "As configurações do Hyprland foram definidas."
 }
 
 import_waybar() {
@@ -58,6 +72,7 @@ import_waybar() {
   chmod u+x ~/.local/share/omarchy/bin/omarchy-theme-waybar
 
   echo "Waybar importado!"
+  notify-send "Configuração importada" "As configurações do Waybar foram definidas."
 }
 
 import_walker() {
@@ -66,6 +81,7 @@ import_walker() {
   backup_if_exists ~/.config/walker
   cp -r ./walker ~/.config/
   echo "Walker importado!"
+  notify-send "Configuração importada" "As configurações do Walker foram definidas."
 }
 
 import_alacritty() {
@@ -74,6 +90,7 @@ import_alacritty() {
   backup_if_exists ~/.config/alacritty
   cp -r ./alacritty ~/.config/
   echo "Alacritty importado!"
+  notify-send "Configuração importada" "As configurações do Alacritty foram definidas."
 }
 
 import_uwsm() {
@@ -82,6 +99,7 @@ import_uwsm() {
   backup_if_exists ~/.config/uwsm
   cp -r ./uwsm ~/.config/
   echo "UWSM importado!"
+  notify-send "Configuração importada" "As configurações do UWSM foram definidas."
 }
 
 import_omarchy() {
@@ -89,7 +107,8 @@ import_omarchy() {
   mkdir -p ~/.config/omarchy
   backup_if_exists ~/.config/omarchy/branding
   cp -r ./omarchy/branding ~/.config/omarchy/  
-  echo "Omarchy importado!"
+  echo "Omarchy Branding importado!"
+  notify-send "Arquivos importados" "Os arquivos do Omarchy Branding foram definidos."
 }
 
 import_nvim() {
@@ -98,6 +117,7 @@ import_nvim() {
   backup_if_exists ~/.config/nvim
   cp -r ./nvim ~/.config/
   echo "Neovim importado!"
+  notify-send "Configuração importada" "As configurações do Neovim foram definidas."
 }
 
 import_vscode() {
@@ -106,6 +126,7 @@ import_vscode() {
   backup_if_exists ~/.config/Code/User/settings.json
   cp -r ./vscode/settings.json ~/.config/Code/User/
   echo "VSCode importado!"
+  notify-send "Configuração importada" "As configurações do VSCode foram definidas."
 }
 
 import_fastfetch() {
@@ -114,6 +135,7 @@ import_fastfetch() {
   backup_if_exists ~/.config/fastfetch
   cp -r ./fastfetch ~/.config/
   echo "Fastfetch importado!"
+  notify-send "Configuração importada" "As configurações do Fastfetch foram definidas."
 }
 
 import_containers() {
@@ -123,6 +145,7 @@ import_containers() {
   cp -r ./containers ~/dev/
   cp ~/dev/containers/ngrok/.env.example ~/dev/containers/ngrok/.env
   echo "Containers importados!"
+  notify-send "Configuração importada" "As configurações dos Containers foram definidas."
 }
 
 import_xcompose() {
@@ -130,6 +153,7 @@ import_xcompose() {
   backup_if_exists ~/.XCompose
   cp -r ./xcompose/.XCompose ~/
   echo "XCompose importado!"
+  notify-send "Configuração importada" "As configurações do XCompose foram definidas."
 }
 
 import_all() {
@@ -152,31 +176,44 @@ import_all() {
 # Menu
 # =====
 show_menu() {
+  options="0) Sair
+1) Tudo
+2) ZSH
+3) Hyprland
+4) Waybar
+5) Walker
+6) Alacritty
+7) UWSM
+8) Omarchy Branding
+9) Neovim
+10) VSCode
+11) Fastfetch
+12) Containers
+13) XCompose"
+
+  echo "$options"
+}
+
+show_menu_terminal() {
   clear
   echo "============================"
   echo "     MENU DE IMPORTAÇÃO"
   echo "============================"
-  echo "1) Importar Tudo"
-  echo "2) Importar ZSH"
-  echo "3) Importar Hyprland"
-  echo "4) Importar Waybar"
-  echo "5) Importar Walker"
-  echo "6) Importar Alacritty"
-  echo "7) Importar UWSM"
-  echo "8) Importar Omarchy Branding"
-  echo "9) Importar Neovim"
-  echo "10) Importar VSCode"
-  echo "11) Importar Fastfetch"
-  echo "12) Importar Containers"
-  echo "13) Exportar XCompose"
-  echo "0) Sair"
+  show_menu
   echo "============================"
 }
 
 while true; do
-  show_menu
-  read -rp "Escolha uma opção: " opt
+  if has_walker; then
+    opt=$(show_menu | walker --dmenu --width 295 --minheight 1 --maxheight 600 -p "Import Menu" 2>/dev/null | grep -o '^[0-9]\+')
+    [ -z "$opt" ] && echo "Cancelado." && exit 0
+  else
+    show_menu_terminal
+    read -rp "Escolha uma opção: " opt
+  fi
+
   case $opt in
+    0) echo "Saindo..."; exit 0 ;;
     1) import_all ;;
     2) import_zsh ;;
     3) import_hypr ;;
@@ -189,10 +226,13 @@ while true; do
     10) import_vscode ;;
     11) import_fastfetch ;;
     12) import_containers ;;
-    13) import_xcompose ;;
-    0) echo "Saindo..."; exit 0 ;;
-    *) echo "Opção inválida!" ;;
+    13) import_xcompose ;;    
+    *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
-  echo ""
-  read -rp "Pressione ENTER para voltar ao menu..."
+
+  # Só espera ENTER no terminal
+  if ! has_walker; then
+    echo ""
+    read -rp "Pressione ENTER para voltar ao menu..."
+  fi
 done

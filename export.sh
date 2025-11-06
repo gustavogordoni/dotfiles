@@ -1,5 +1,9 @@
 #!/bin/bash
 
+has_walker() {
+  command -v walker &>/dev/null
+}
+
 reset() {
   echo "Limpando diretórios antigos..."
   rm -rf ./hypr ./waybar ./walker ./alacritty ./uwsm ./omarchy \
@@ -13,6 +17,7 @@ export_zsh() {
   cp -r ~/.oh-my-zsh/custom/aliases.zsh ./zsh/aliases.zsh
   cp -r ~/.p10k.zsh ./powerlevel10k/
   echo "ZSH exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do ZSH foram copiadas."
 }
 
 export_hypr() {
@@ -20,6 +25,7 @@ export_hypr() {
   mkdir -p ./hypr
   cp -r ~/.config/hypr/* ./hypr/
   echo "Hypr exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Hyprland foram copiadas."
 }
 
 export_waybar() {
@@ -29,6 +35,7 @@ export_waybar() {
   rm ./waybar/config.jsonc
   rm ./waybar/style.css
   echo "Waybar exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Waybar foram copiadas."
 }
 
 export_walker() {
@@ -36,6 +43,7 @@ export_walker() {
   mkdir -p ./walker
   cp -r ~/.config/walker/* ./walker/
   echo "Walker exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Walker foram copiadas."
 }
 
 export_alacritty() {
@@ -43,6 +51,7 @@ export_alacritty() {
   mkdir -p ./alacritty
   cp -r ~/.config/alacritty/* ./alacritty/
   echo "Alacritty exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Alacritty foram copiadas."
 }
 
 export_uwsm() {
@@ -50,6 +59,7 @@ export_uwsm() {
   mkdir -p ./uwsm
   cp -r ~/.config/uwsm/* ./uwsm/
   echo "UWSM exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do UWSM foram copiadas."
 }
 
 export_omarchy() {
@@ -59,6 +69,8 @@ export_omarchy() {
   cp -r ~/.config/omarchy/branding/* ./omarchy/branding/
   cp -r ~/.local/share/omarchy/bin/omarchy-theme-waybar ./omarchy/bin/
   echo "Omarchy exportado com sucesso!"
+  echo "Omarchy Branding importado!"
+  notify-send "Arquivos exportados" "Os arquivos do Omarchy Branding foram copiados."
 }
 
 export_nvim() {
@@ -67,6 +79,7 @@ export_nvim() {
   cp -r ~/.config/nvim/* ./nvim/
   rm ./nvim/lazy-lock.json
   echo "Neovim exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Neovim foram copiadas."
 }
 
 export_vscode() {
@@ -74,6 +87,7 @@ export_vscode() {
   mkdir -p ./vscode
   cp -r ~/.config/Code/User/settings.json ./vscode/
   echo "VSCode exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do VSCode foram copiadas."
 }
 
 export_fastfetch() {
@@ -82,6 +96,7 @@ export_fastfetch() {
   cp -r ~/.config/fastfetch/* ./fastfetch/
   cp ~/.config/omarchy/branding/about.txt ./fastfetch/
   echo "Fastfetch exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Fastfetch foram copiadas."
 }
 
 export_containers() {
@@ -91,6 +106,7 @@ export_containers() {
   cp -r ~/dev/containers/ngrok/*.yml ./containers/ngrok/
   cp -r ~/dev/containers/ngrok/.env.example ./containers/ngrok/
   echo "Containers exportados com sucesso!"
+  notify-send "Configuração exportada" "As configurações dos Containers foram copiadas."
 }
 
 export_xcompose() {
@@ -98,6 +114,7 @@ export_xcompose() {
   mkdir -p ./xcompose
   cp -r ~/.XCompose ./xcompose/
   echo "XCompose exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do XCompose foram copiadas."
 }
 
 export_all() {
@@ -121,31 +138,44 @@ export_all() {
 # Menu
 # =====
 show_menu() {
+  options="0) Sair
+1) Tudo
+2) ZSH
+3) Hyprland
+4) Waybar
+5) Walker
+6) Alacritty
+7) UWSM
+8) Omarchy Branding
+9) Neovim
+10) VSCode
+11) Fastfetch
+12) Containers
+13) XCompose"
+
+  echo "$options"
+}
+
+show_menu_terminal() {
   clear
   echo "============================"
   echo "     MENU DE EXPORTAÇÃO"
   echo "============================"
-  echo "1) Exportar Tudo"
-  echo "2) Exportar ZSH"
-  echo "3) Exportar Hyprland"
-  echo "4) Exportar Waybar"
-  echo "5) Exportar Walker"
-  echo "6) Exportar Alacritty"
-  echo "7) Exportar UWSM"
-  echo "8) Exportar Omarchy Branding"
-  echo "9) Exportar Neovim"
-  echo "10) Exportar VSCode"
-  echo "11) Exportar Fastfetch"
-  echo "12) Exportar Containers"
-  echo "13) Exportar XCompose"
-  echo "0) Sair"
+  show_menu
   echo "============================"
 }
 
 while true; do
-  show_menu
-  read -rp "Escolha uma opção: " opt
+  if has_walker; then
+    opt=$(show_menu | walker --dmenu --width 295 --minheight 1 --maxheight 600 -p "Export Menu" 2>/dev/null | grep -o '^[0-9]\+')
+    [ -z "$opt" ] && echo "Cancelado." && exit 0
+  else
+    show_menu_terminal
+    read -rp "Escolha uma opção: " opt
+  fi
+
   case $opt in
+    0) echo "Saindo..."; exit 0 ;;
     1) export_all ;;
     2) export_zsh ;;
     3) export_hypr ;;
@@ -159,9 +189,11 @@ while true; do
     11) export_fastfetch ;;
     12) export_containers ;;
     13) export_xcompose ;;
-    0) echo "Saindo..."; exit 0 ;;
-    *) echo "Opção inválida!" ;;
+    *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
-  echo ""
-  read -rp "Pressione ENTER para voltar ao menu..."
+
+  if ! has_walker; then
+    echo ""
+    read -rp "Pressione ENTER para voltar ao menu..."
+  fi
 done

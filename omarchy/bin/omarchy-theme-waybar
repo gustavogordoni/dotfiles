@@ -23,7 +23,7 @@ if [[ -z "$themes" ]]; then
 fi
 
 # Select theme using walker
-selected=$(echo "$themes" | walker --dmenu --theme menus --width 295 --minheight 1 --maxheight 600 -p "Select" 2>/dev/null | tail -n 1)
+selected=$(echo "$themes" | walker --dmenu --width 295 --minheight 1 --maxheight 600 -p "Select" 2>/dev/null | tail -n 1)
 
 if [[ "$selected" == "CNCLD" || -z "$selected" ]]; then
   exit 0

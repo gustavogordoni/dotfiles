@@ -19,7 +19,7 @@ if [[ -z "$profiles" ]]; then
 fi
 
 # Mostra o menu com walker
-selected=$(echo "$profiles" | walker --dmenu --theme menus --width 295 --minheight 1 --maxheight 600 -p "HyprMon Profile" 2>/dev/null | tail -n 1)
+selected=$(echo "$profiles" | walker --dmenu --width 295 --minheight 1 --maxheight 600 -p "HyprMon Profile" 2>/dev/null | tail -n 1)
 
 # Se cancelado ou vazio
 if [[ "$selected" == "CNCLD" || -z "$selected" ]]; then
