@@ -26,6 +26,8 @@ export_waybar() {
   echo "Exportando Waybar..."
   mkdir -p ./waybar
   cp -r ~/.config/waybar/* ./waybar/
+  rm ./waybar/config.jsonc
+  rm ./waybar/style.css
   echo "Waybar exportado com sucesso!"
 }
 
@@ -53,7 +55,9 @@ export_uwsm() {
 export_omarchy() {
   echo "Exportando Omarchy Branding..."
   mkdir -p ./omarchy/branding
+  mkdir -p ./omarchy/bin
   cp -r ~/.config/omarchy/branding/* ./omarchy/branding/
+  cp -r ~/.local/share/omarchy/bin/omarchy-theme-waybar ./omarchy/bin/
   echo "Omarchy exportado com sucesso!"
 }
 
@@ -61,6 +65,7 @@ export_nvim() {
   echo "Exportando Neovim..."
   mkdir -p ./nvim
   cp -r ~/.config/nvim/* ./nvim/
+  rm ./nvim/lazy-lock.json
   echo "Neovim exportado com sucesso!"
 }
 
@@ -82,9 +87,9 @@ export_fastfetch() {
 export_containers() {
   echo "Exportando Containers..."
   mkdir -p ./containers/ngrok
-  cp -r ~/dev/Containers/*.yml ./containers/
-  cp -r ~/dev/Containers/ngrok/*.yml ./containers/ngrok/
-  cp -r ~/dev/Containers/ngrok/.env.example ./containers/ngrok/
+  cp -r ~/dev/containers/*.yml ./containers/
+  cp -r ~/dev/containers/ngrok/*.yml ./containers/ngrok/
+  cp -r ~/dev/containers/ngrok/.env.example ./containers/ngrok/
   echo "Containers exportados com sucesso!"
 }
 

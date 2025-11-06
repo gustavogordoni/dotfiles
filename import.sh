@@ -39,6 +39,7 @@ import_hypr() {
   mkdir -p ~/.config
   backup_if_exists ~/.config/hypr
   cp -r ./hypr ~/.config/
+  chmod -R u+x ~/.config/hypr/scripts
   echo "Hypr importado!"
 }
 
@@ -46,7 +47,16 @@ import_waybar() {
   echo "Importando Waybar..."
   mkdir -p ~/.config
   backup_if_exists ~/.config/waybar
+  
   cp -r ./waybar ~/.config/
+  chmod -R u+x ~/.config/waybar/scripts
+
+  cp ~/.config/waybar/themes/gordoni/config.jsonc ~/.config/waybar/config.jsonc
+  cp ~/.config/waybar/themes/gordoni/style.css ~/.config/waybar/style.css
+
+  cp ./omarchy/bin/omarchy-theme-waybar ~/.local/share/omarchy/bin/
+  chmod u+x ~/.local/share/omarchy/bin/omarchy-theme-waybar
+
   echo "Waybar importado!"
 }
 
@@ -78,7 +88,7 @@ import_omarchy() {
   echo "Importando Omarchy Branding..."
   mkdir -p ~/.config/omarchy
   backup_if_exists ~/.config/omarchy/branding
-  cp -r ./omarchy/branding ~/.config/omarchy/
+  cp -r ./omarchy/branding ~/.config/omarchy/  
   echo "Omarchy importado!"
 }
 
@@ -109,8 +119,9 @@ import_fastfetch() {
 import_containers() {
   echo "Importando Containers..."
   mkdir -p ~/dev
-  backup_if_exists ~/dev/Containers
+  backup_if_exists ~/dev/containers
   cp -r ./containers ~/dev/
+  cp ~/dev/containers/ngrok/.env.example ~/dev/containers/ngrok/.env
   echo "Containers importados!"
 }
 
