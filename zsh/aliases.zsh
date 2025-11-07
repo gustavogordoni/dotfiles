@@ -32,24 +32,24 @@ alias decompress="tar -xzf"
 alias pa="php artisan"
 alias dc="docker compose"
 alias sail="./vendor/bin/sail"
-alias postgres='docker compose -f ~/dev/Containers/docker-compose-postgres.yml up'
-alias mysql='docker compose -f ~/dev/Containers/docker-compose-mysql.yml up'
+alias postgres='docker compose -f ~/dev/containers/docker-compose-postgres.yml up'
+alias mysql='docker compose -f ~/dev/containers/docker-compose-mysql.yml up'
 alias marp='docker run --rm --init -v $(pwd):/home/marp/app -e LANG=$LANG -e MARP_USER="$(id -u):$(id -g)" marpteam/marp-cli'
-alias cbnew='/home/gordoni/dev/codeblocks-projects/cb_create_project.sh'
-alias cbbuild='/home/gordoni/dev/codeblocks-projects/cb_build_run.sh'
-alias cbmain='/home/gordoni/dev/dev/codeblocks-projects/cb_copy_main.sh'
-alias nbbuild='/home/gordoni/dev/netbeans-projects/nb_build_run.sh'
+alias cbnew='$HOME/dev/codeblocks-projects/cb_create_project.sh'
+alias cbbuild='$HOME/dev/codeblocks-projects/cb_build_run.sh'
+alias cbmain='$HOME/dev/dev/codeblocks-projects/cb_copy_main.sh'
+alias nbbuild='$HOME/dev/netbeans-projects/nb_build_run.sh'
 alias c='clear'
 alias e='exit'
 alias python='python3'
-alias ngrok='docker compose -f /home/gordoni/dev/Containers/ngrok/docker-compose.yml run --rm ngrok'
-alias ngrok-static='docker compose -f /home/gordoni/dev/Containers/ngrok/docker-compose-static.yml run --rm ngrok'
-alias scan='/home/gordoni/dev/pentest/scanweb.sh'
+alias ngrok='docker compose -f $HOME/dev/containers/ngrok/docker-compose.yml run --rm ngrok'
+alias ngrok-static='docker compose -f $HOME/dev/containers/ngrok/docker-compose-static.yml run --rm ngrok'
+alias scan='$HOME/dev/pentest/scanweb.sh'
 alias java-listar-versao='archlinux-java status'
 alias java-alterar-versao='sudo archlinux-java set'
 
 # alias setoolkit='sudo python3 ~/.config/setoolkit/setoolkit'
 alias setoolkit='sudo docker run --rm -it --net=host --cap-add=NET_ADMIN \
-  -v /home/gordoni/dev/siteClone:/home/gordoni/dev/siteClone \
+  -v $HOME/dev/siteClone:$HOME/dev/siteClone \
   -v /root/.set/reports:/root/.set/reports \
   setoolkit:py-slim'

@@ -127,7 +127,7 @@ source $ZSH_CUSTOM/aliases.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Alias em: /home/gordoni/.oh-my-zsh/custom/aliases.zsh
+# Alias em: $HOME/.oh-my-zsh/custom/aliases.zsh
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 

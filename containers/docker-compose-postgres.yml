@@ -9,7 +9,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ~/dev/Containers/postgres:/var/lib/postgresql/data
+      - ~/dev/containers/postgres:/var/lib/postgresql/data
   
   pgadmin:
     image: dpage/pgadmin4:8.10
@@ -23,7 +23,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ~/dev/Containers/pgadmin:/var/lib/pgadmin/storage
+      - ~/dev/containers/pgadmin:/var/lib/pgadmin/storage
       #- /media/live/GORDONI/3° INFO/LPB-3/sql/:/home/sql/
   
 networks:
