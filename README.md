@@ -117,6 +117,9 @@ O script `import.sh` aplica as configurações do repositório no seu sistema.
 
 ## Teclas de Atalho
 
+<details>
+<summary><strong>Ver o mapeamento de teclas (Atalho e Ação executada)</strong></summary>
+
 | **Atalho**            | **Nome / Descrição**          | **Ação executada**                                                                 |
 | --------------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
 | **SUPER + RETURN**    | Terminal (Alacritty)          | `exec, uwsm app -- $TERMINAL --dir="$(omarchy-cmd-terminal-cwd)"`                  |
@@ -140,28 +143,19 @@ O script `import.sh` aplica as configurações do repositório no seu sistema.
 | **SUPER + Z**         | Toggle Waybar Theme           | `exec, omarchy-theme-waybar`                                                       |
 | **SUPER + SHIFT + Z** | Toggle Waybar Theme (Test)    | `exec, omarchy-theme-waybar-test`                                                  |
 
+</details>
+
 Pode-se notar que foram adicionados **atalhos personalizados** e **scripts auxiliares** para o ambiente.
 Eles incluem a troca de temas da Waybar, gerenciamento de monitores com Hyprmon e novos atalhos de aplicativos.
 
 <details>
-<summary><strong>Ver detalhes</strong></summary>
+<summary><strong>Ver detalhes das modificações</strong></summary>
 
 <br>
 
-### Visão Geral
+### 1. Script: `hyprmon-picker.sh`
 
-As modificações personalizadas adicionam:
-
-* Scripts interativos com o **Walker**
-* Integração com **HyprMon** e **Waybar**
-
----
-
-### 1. Novo Script: `hyprmon-picker.sh`
-
-**Caminho:** `~/.config/hypr/scripts/hyprmon-picker.sh`
-<br>
-Permite escolher e aplicar **perfis de monitor** salvos no `HyprMon`.
+Permite escolher e aplicar **perfis de monitor** salvos no [hyprmon](https://github.com/erans/hyprmon).
 
 #### Funcionamento
 
@@ -169,7 +163,7 @@ Permite escolher e aplicar **perfis de monitor** salvos no `HyprMon`.
 2. Exibe menu via `walker --dmenu`
 3. Aplica o perfil selecionado com `hyprmon --profile`
 
-#### Atalho associado
+#### Atalho
 
 | Atalho                | Ação                              |
 | --------------------- | --------------------------------- |
@@ -177,11 +171,11 @@ Permite escolher e aplicar **perfis de monitor** salvos no `HyprMon`.
 
 ---
 
-### 2. Novo Script: `omarchy-theme-waybar`
+### 2. Script: `omarchy-theme-waybar`
 
-**Caminho:** `~/.config/hypr/scripts/omarchy-theme-waybar`
-<br>
 Facilita a troca de **temas da Waybar** diretamente com um menu.
+<br>
+Pequena adaptação de: [Omarchy-auto-waybar-switch](https://github.com/Palccod/Omarchy-auto-waybar-switch)
 
 #### Funcionamento
 
@@ -190,7 +184,7 @@ Facilita a troca de **temas da Waybar** diretamente com um menu.
 3. Copia o tema selecionado para `style.css` e `config.jsonc`
 4. Reinicia a Waybar automaticamente
 
-#### Atalho associado
+#### Atalho
 
 | Atalho        | Ação                    |
 | ------------- | ----------------------- |
