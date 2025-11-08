@@ -199,7 +199,7 @@ Facilita a troca de **temas da Waybar** diretamente com um menu.
 ---
 
 ### 3. Outros Atalhos Customizados
-As funcionalidades a seguir já existem por padrão no Omarchy, entretanto, são utilizadas através de outras teclas de ataho (na maioria delas ,era necessário também precionar SHIFT).
+Algumas das funcionalidades a seguir já existem por padrão no Omarchy, entretanto, são utilizadas através de outras teclas de ataho (na maioria delas, era necessário também precionar SHIFT).
 
 | Atalho                | Ação             | Descrição                           |
 | --------------------- | ---------------- | ----------------------------------- |
