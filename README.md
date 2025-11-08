@@ -111,3 +111,102 @@ O script `import.sh` aplica as configurações do repositório no seu sistema.
 
 3. Os arquivos serão copiados para os diretórios correspondentes.
 > Exemplo: `./hypr/` → `~/.config/hypr/`
+> 
+
+---
+
+## Teclas de Atalho
+
+| **Atalho**            | **Nome / Descrição**          | **Ação executada**                                                                 |
+| --------------------- | ----------------------------- | ---------------------------------------------------------------------------------- |
+| **SUPER + RETURN**    | Terminal (Alacritty)          | `exec, uwsm app -- $TERMINAL --dir="$(omarchy-cmd-terminal-cwd)"`                  |
+| **SUPER + F**         | File manager (Nautilus)       | `exec, uwsm app -- nautilus --new-window`                                          |
+| **SUPER + B**         | Browser (Firefox)             | `exec, omarchy-launch-browser`                                                     |
+| **SUPER + SHIFT + B** | Browser (private)             | `exec, omarchy-launch-browser --private`                                           |
+| **SUPER + M**         | Music (Spotify)               | `exec, omarchy-launch-or-focus spotify`                                            |
+| **SUPER + N**         | Editor (VS Code)              | `exec, omarchy-launch-editor`                                                      |
+| **SUPER + SHIFT + D** | Docker (Lazydocker)           | `exec, uwsm app -- $TERMINAL -e lazydocker`                                        |
+| **SUPER + A**         | ChatGPT                       | `exec, omarchy-launch-webapp "https://chatgpt.com"`                                |
+| **SUPER + Y**         | YouTube                       | `exec, omarchy-launch-or-focus-webapp YouTube "https://youtube.com/"`              |
+| **SUPER + SHIFT + W** | WhatsApp                      | `exec, omarchy-launch-or-focus-webapp WhatsApp "https://web.whatsapp.com/"`        |
+| **SUPER + SHIFT + F** | Fullscreen                    | `fullscreen, 0`                                                                    |
+| **SUPER + T**         | Activity (btop)               | `exec, uwsm app -- $TERMINAL -e btop`                                              |
+| **SUPER + V**         | Toggle window floating/tiling | `togglefloating,`                                                                  |
+| **SUPER + D**         | Discord                       | `exec, omarchy-launch-webapp "https://discord.com/channels/@me"`                   |
+| **SUPER + G**         | Github                        | `exec, omarchy-launch-webapp "https://github.com/gustavogordoni?tab=repositories"` |
+| **SUPER + SHIFT + N** | Netbeans                      | `exec, netbeans`                                                                   |
+| **SUPER + SHIFT + C** | Calculator                    | `exec, gnome-calculator`                                                           |
+| **SUPER + SHIFT + M** | Monitor Picker                | `exec, ~/.config/hypr/scripts/hyprmon-picker.sh`                                   |
+| **SUPER + Z**         | Toggle Waybar Theme           | `exec, omarchy-theme-waybar`                                                       |
+| **SUPER + SHIFT + Z** | Toggle Waybar Theme (Test)    | `exec, omarchy-theme-waybar-test`                                                  |
+
+Pode-se notar que foram adicionados **atalhos personalizados** e **scripts auxiliares** para o ambiente.
+Eles incluem a troca de temas da Waybar, gerenciamento de monitores com Hyprmon e novos atalhos de aplicativos.
+
+<details>
+<summary><strong>Ver detalhes</strong></summary>
+
+<br>
+
+### Visão Geral
+
+As modificações personalizadas adicionam:
+
+* Scripts interativos com o **Walker**
+* Integração com **HyprMon** e **Waybar**
+
+---
+
+### 1. Novo Script: `hyprmon-picker.sh`
+
+**Caminho:** `~/.config/hypr/scripts/hyprmon-picker.sh`
+<br>
+Permite escolher e aplicar **perfis de monitor** salvos no `HyprMon`.
+
+#### Funcionamento
+
+1. Lista todos os perfis em `~/.config/hyprmon/profiles/`
+2. Exibe menu via `walker --dmenu`
+3. Aplica o perfil selecionado com `hyprmon --profile`
+
+#### Atalho associado
+
+| Atalho                | Ação                              |
+| --------------------- | --------------------------------- |
+| **SUPER + SHIFT + M** | Abrir menu de perfis de monitores |
+
+---
+
+### 2. Novo Script: `omarchy-theme-waybar`
+
+**Caminho:** `~/.config/hypr/scripts/omarchy-theme-waybar`
+<br>
+Facilita a troca de **temas da Waybar** diretamente com um menu.
+
+#### Funcionamento
+
+1. Busca temas em `~/.config/waybar/themes/`
+2. Exibe o seletor no Walker
+3. Copia o tema selecionado para `style.css` e `config.jsonc`
+4. Reinicia a Waybar automaticamente
+
+#### Atalho associado
+
+| Atalho        | Ação                    |
+| ------------- | ----------------------- |
+| **SUPER + Z** | Alternar tema da Waybar |
+
+---
+
+### 3. Outros Atalhos Customizados
+As funcionalidades a seguir já existem por padrão no Omarchy, entretanto, são utilizadas através de outras teclas de ataho (na maioria delas ,era necessário também precionar SHIFT).
+
+| Atalho                | Ação             | Descrição                           |
+| --------------------- | ---------------- | ----------------------------------- |
+| **SUPER + SHIFT + F** | Tela cheia       | Alterna fullscreen da janela atual  |
+| **SUPER + V**         | Flutuante/Tiling | Alterna modo de janela              |
+| **SUPER + T**         | `btop`           | Abre monitor de sistema no terminal |
+| **SUPER + D**         | Discord          | Abre o Discord Web em Web App       |
+| **SUPER + G**         | GitHub           | Abre perfil no GitHub em Web App    |
+| **SUPER + SHIFT + N** | NetBeans         | Abre a IDE                          |
+| **SUPER + SHIFT + C** | Calculadora      | Abre `gnome-calculator`             |
