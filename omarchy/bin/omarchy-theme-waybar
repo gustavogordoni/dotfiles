@@ -12,10 +12,18 @@ if [[ ! -d "$THEMES_DIR" ]]; then
 fi
 
 # List available waybar themes
-themes=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort | while read -r path; do
-  theme_name="$(basename "$path")"
-  echo "$theme_name"
-done)
+themes=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) \
+  | sort \
+  | while read -r path; do
+      basename "$path"
+    done \
+  | grep -v '^test$')
+
+
+# themes=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort | while read -r path; do
+#   theme_name="$(basename "$path")"
+#   echo "$theme_name"
+# done)
 
 if [[ -z "$themes" ]]; then
   notify-send "Error" "No waybar themes found"
