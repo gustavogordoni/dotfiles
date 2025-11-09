@@ -15,6 +15,7 @@
   "modules-center": [
     "clock",
     "custom/update",
+    "custom/pacman",
     "custom/screenrecording-indicator"
   ],
   "modules-right": [
@@ -88,6 +89,15 @@
     "tooltip-format": "Omarchy update available",
     "signal": 7,
     "interval": 3600
+  },
+  "custom/pacman": {
+    "format": "󰏖",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "if [[ $(checkupdates | wc -l) -gt 0 ]]; then exit 0; fi; exit 1",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation yay",
+    "tooltip-format": "{text} package updates available",
+    "signal": 7,
+    "interval": 21600
   },
 
   "cpu": {

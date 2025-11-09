@@ -18,6 +18,7 @@
     "mpris",
     "clock",
     "custom/update",
+    "custom/pacman",
     "custom/screenrecording-indicator"
   ],
   "modules-right": [
@@ -69,8 +70,8 @@
       "Picture-in-Picture",
       "Volume Control",
       "Windscribe",
-      "dojo-voice",
-    ],
+      "dojo-voice"
+    ]
   },
   "custom/omarchy": {
     "format": "",
@@ -85,6 +86,15 @@
     "tooltip-format": "Omarchy update available",
     "signal": 7,
     "interval": 3600
+  },
+  "custom/pacman": {
+    "format": "󰏖",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "if [[ $(checkupdates | wc -l) -gt 0 ]]; then exit 0; fi; exit 1",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation yay",
+    "tooltip-format": "{text} package updates available",
+    "signal": 7,
+    "interval": 21600
   },
   "cpu": {
     "interval": 2,
@@ -119,13 +129,7 @@
     "on-click-right": "~/.local/share/omarchy/bin/omarchy-cmd-tzupdate"
   },
   "network": {
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon} ",
     "format-wifi": "{icon} ",
     "format-ethernet": "󰀂",
@@ -143,30 +147,8 @@
     "format-charging": "{icon} {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": {
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
-      "default": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ]
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "format-full": "󰂅 {capacity}%",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
@@ -193,11 +175,7 @@
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
-      "default": [
-        "",
-        " ",
-        " "
-      ]
+      "default": ["", " ", " "]
     }
   },
   "mpris": {
@@ -220,10 +198,7 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": [
-      "custom/expand-icon",
-      "tray"
-    ]
+    "modules": ["custom/expand-icon", "tray"]
   },
   "custom/expand-icon": {
     "format": " ",
@@ -243,10 +218,6 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "scroll-step": 5,
-    "format-icons": [
-      "󱓤 ",
-      " ",
-      " "
-    ]
+    "format-icons": ["󱓤 ", " ", " "]
   }
 }
