@@ -1,9 +1,15 @@
 #!/bin/bash
 
 WAYBAR_DIR="$HOME/.config/waybar"
-THEMES_DIR="$WAYBAR_DIR/themes"
 STYLE_CSS="$WAYBAR_DIR/style.css"
 CONFIG_JSONC="$WAYBAR_DIR/config.jsonc"
+
+MODE="${1,,}"
+if [[ "$MODE" == "test" ]]; then
+  THEMES_DIR="$WAYBAR_DIR/themes/test"
+else
+  THEMES_DIR="$WAYBAR_DIR/themes"
+fi
 
 # Check if themes directory exists
 if [[ ! -d "$THEMES_DIR" ]]; then
@@ -16,14 +22,11 @@ themes=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) \
   | sort \
   | while read -r path; do
       basename "$path"
-    done \
-  | grep -v '^test$')
+    done)
 
-
-# themes=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort | while read -r path; do
-#   theme_name="$(basename "$path")"
-#   echo "$theme_name"
-# done)
+if [[ "$MODE" != "test" ]]; then
+  themes=$(echo "$themes" | grep -v '^test$')
+fi
 
 if [[ -z "$themes" ]]; then
   notify-send "Error" "No waybar themes found"
