@@ -7,6 +7,8 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 > * Minhas configurações para o [Linux Mint 22.2](https://github.com/gustavogordoni/dotfiles/tree/mint).
 > * O tema [Gordoni](https://github.com/gustavogordoni/omarchy-gordoni-theme) que desenvolvi para o Omarchy.
 
+[English Version](README.en.md)
+
 ---
 
 ## Screenshots
@@ -204,3 +206,15 @@ Algumas das funcionalidades a seguir já existem por padrão no Omarchy, entreta
 | **SUPER + G**         | GitHub           | Abre perfil no GitHub em Web App    |
 | **SUPER + SHIFT + N** | NetBeans         | Abre a IDE                          |
 | **SUPER + SHIFT + C** | Calculadora      | Abre `gnome-calculator`             |
+
+</details>
+
+---
+
+## Créditos
+
+[Palccod/Omarchy-auto-waybar-switch](https://github.com/Palccod/Omarchy-auto-waybar-switch) <br>
+
+[HANCORE-linux/waybar-themes](https://github.com/HANCORE-linux/waybar-themes) <br>
+
+[imbypass/omarchy-waybar-bepi](https://github.com/imbypass/omarchy-waybar-bepi)
