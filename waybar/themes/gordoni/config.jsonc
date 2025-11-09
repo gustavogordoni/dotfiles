@@ -119,8 +119,7 @@
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b>{}</b></span>"
       }
-    },
-    "on-click-right": "~/.local/share/omarchy/bin/omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+    }    
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -207,7 +206,26 @@
 
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": [""]
+    // "format-icons": [""]
+    "format-icons": [      
+      "󰽤",
+      
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",      
+           
+      ""
+    ]
   },
 
   "custom/usb": {

@@ -1,52 +1,49 @@
 {
-  "exclusive": true,
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  // "height": 35,
-  "height": 22,
-  "margin-left": 10,
-  "margin-right": 10,
+  // "height": 25,
+  "height": 0,
+  // "width": 1440,
+  "margin": "0",
   "modules-left": [
     "custom/omarchy",
     "hyprland/workspaces",
-    // "hyprland/window"
-    "wlr/taskbar"
+    "hyprland/window"
   ],
   "modules-center": [
-    "mpris",
     "clock",
+    "idle_inhibitor",
     "custom/update",
-    "custom/pacman",
     "custom/screenrecording-indicator"
   ],
   "modules-right": [
     "group/tray-expander",
+    "custom/updatespacman",    
+    "backlight",
     "bluetooth",
     "network",
-    "backlight",
     "pulseaudio",
     "cpu",
     "memory",
-    "temperature",
     "battery"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "default": "",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
+      "default": "",
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
       "6": "6",
       "7": "7",
       "8": "8",
       "9": "9",
-      "active": "󱓻"
+      "active": ""
     },
     "persistent-workspaces": {
       "1": [],
@@ -56,61 +53,84 @@
       "5": []
     }
   },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "sort-by-app-id": true,
-    "ignore-list": [
-      "",
-      "Bluetooth Devices",
-      "Network Connections",
-      "Picture-in-Picture",
-      "Volume Control",
-      "Windscribe",
-      "dojo-voice"
-    ]
+  "hyprland/window": {
+    "format": "{title} - {class}",
+    "max-length": 45,
+    "rewrite": {
+      " - ": "", // if no window is focused, a single dash is displayed, this removes it
+      "(.*?) - Chromium - chromium": "  $1 ",
+      "(.*chrome)...(.*)": "  $1 ",
+      "(.*) - Obsidian - .* - obsidian": "  $1 ",
+      "(.*nvim)...(.*)": "  $2 ",
+      "(.*code) - (.*)": " 󰨞 $1 ",
+      "^.*btop( .*|$)": " 󰧨 BTOP $1 ",
+      "^.*cmatrix( .*|$)": " 󰘨 MATRIX $1 ",
+      "(.*) - Spotify": "  $1 ",
+      "(.*) - com.mitchellh.ghostty": " 󰊠 $1 ",
+      "(.*) - Alacritty": "   $1 ",
+      "(.*) - BeeperTexts": " 󰻞  $1 ",
+      "(.*Discord)...(.*).. (.*)": "  $2 ",
+      "(.*) - org.gnome.Nautilus": " 󰣆 $1 ",
+      "(.*) - fish": "  [$1] ",
+      "(.*Steam)...(.*)": "  $1",
+      // "OBS *. - (.*) - com.obsproject.Studio": "  $1", // not yet functional
+      // "nvim (.*) - com.mitchellh.ghostty": "  $1", // not being captured
+    }
   },
   "custom/omarchy": {
-    "format": "",
+    "format": "<span font='omarchy'>\ue900</span>",
     "on-click": "omarchy-menu",
-    "on-click-right": "omarchy-launch-terminal",
+    "on-click-right": "xdg-terminal-exec",
     "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
   },
   "custom/update": {
-    "format": "",
+    "format": "<span weight='bold' >\ue900</span>",
     "exec": "omarchy-update-available",
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
     "signal": 7,
     "interval": 3600
   },
-  "custom/pacman": {
-    "format": "󰏖",
-    "exec": "checkupdates | wc -l",
-    "exec-if": "if [[ $(checkupdates | wc -l) -gt 0 ]]; then exit 0; fi; exit 1",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation yay",
-    "tooltip-format": "{text} package updates available",
-    "signal": 7,
-    "interval": 21600
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": [      
+      "󰽤",
+      
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",      
+           
+      ""
+    ]
   },
+  "custom/updatespacman": {
+  "format": "󰏖",
+  "exec": "checkupdates | wc -l",
+  "exec-if": "if [[ $(checkupdates | wc -l) -gt 0 ]]; then exit 0; fi; exit 1",
+  "on-click": "omarchy-launch-floating-terminal-with-presentation yay",
+  "tooltip-format": "{text} package updates available",
+  "signal": 7,
+  "interval": 21600,
+},
   "cpu": {
     "interval": 2,
     "format": "󰍛 {usage}%",
-    "on-click": "$TERMINAL -e btop"
+    "on-click": "xdg-terminal-exec btop"
   },
   "memory": {
     "interval": 2,
-    "format": "  {percentage}%",
-    "on-click": "$TERMINAL -e btop"
-  },
-  "temperature": {
-    "interval": 2,
-    "critical-threshold": 85,
-    "format": " {temperatureC}°C",
-    "format-critical": " {temperatureC}°C"
+    "format": " {percentage}%",
   },
   "clock": {
     "format": "{:%H:%M}",
@@ -127,10 +147,23 @@
       }
     }    
   },
+    "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
   "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon} ",
-    "format-wifi": "{icon} ",
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
@@ -144,12 +177,34 @@
     "format": "{icon} {capacity}%",
     "format-discharging": "{icon} {capacity}%",
     "format-charging": "{icon} {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-plugged": "",
     "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
     },
-    "format-full": "󰂅 {capacity}%",
+    "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
@@ -162,34 +217,24 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "󰂱",
+    "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueberry"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+    "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
-      "default": ["", " ", " "]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     }
-  },
-  "mpris": {
-    "format": "{player_icon}",
-    "format-paused": "{status_icon}",
-    "tooltip-format": "{dynamic}",
-    "player-icons": {
-      "default": "",
-      "mpv": "",
-      "termusic": ""
-    },
-    "status-icons": {
-      "paused": ""
-    },
-    "on-click": "playerctl play-pause"
   },
   "group/tray-expander": {
     "orientation": "inherit",
@@ -197,7 +242,10 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "tray"]
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
   },
   "custom/expand-icon": {
     "format": " ",
@@ -212,11 +260,5 @@
   "tray": {
     "icon-size": 12,
     "spacing": 12
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "scroll-step": 5,
-    "format-icons": ["󱓤 ", " ", " "]
   }
 }
