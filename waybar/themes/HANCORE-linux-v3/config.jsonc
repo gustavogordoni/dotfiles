@@ -139,7 +139,7 @@
     "format-alt": "{:L%A - %d/%m/%Y}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
-      "mode": "mouth",
+      "mode": "year",
       "mode-mon-col": 3,
       "on-click-right": "mode",
       "format": {

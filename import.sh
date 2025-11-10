@@ -37,12 +37,27 @@ backup_if_exists() {
 import_zsh() {
   echo "Importando ZSH..."
   mkdir -p ~/.oh-my-zsh/custom/
+
+  # Plugins Zsh
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+  git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+  git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+
   backup_if_exists ~/.zshrc
   cp -r ./zsh/.zshrc ~/
   backup_if_exists ~/.oh-my-zsh/custom/aliases.zsh
   cp -r ./zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
   backup_if_exists ~/.p10k.zsh
+  
+  # Theme dependencies
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
   cp -r ./powerlevel10k/.p10k.zsh ~/
+
+  source ~/.zshrc
+  source $ZSH_CUSTOM/aliases.zsh
+
   echo "ZSH importado!"
   notify-send "Configuração importada" "As configurações do ZSH foram definidas."
 }
@@ -53,6 +68,9 @@ import_hypr() {
   backup_if_exists ~/.config/hypr
   cp -r ./hypr ~/.config/
   chmod -R u+x ~/.config/hypr/scripts
+
+  hyprctl reload
+
   echo "Hypr importado!"
   notify-send "Configuração importada" "As configurações do Hyprland foram definidas."
 }
@@ -71,6 +89,8 @@ import_waybar() {
   cp ./omarchy/bin/omarchy-theme-waybar ~/.local/share/omarchy/bin/
   chmod u+x ~/.local/share/omarchy/bin/omarchy-theme-waybar
 
+  omarchy-restart-waybar
+
   echo "Waybar importado!"
   notify-send "Configuração importada" "As configurações do Waybar foram definidas."
 }
@@ -80,6 +100,9 @@ import_walker() {
   mkdir -p ~/.config
   backup_if_exists ~/.config/walker
   cp -r ./walker ~/.config/
+
+  omarchy-restart-walker
+
   echo "Walker importado!"
   notify-send "Configuração importada" "As configurações do Walker foram definidas."
 }
@@ -134,8 +157,11 @@ import_fastfetch() {
   mkdir -p ~/.config
   backup_if_exists ~/.config/fastfetch
   cp -r ./fastfetch ~/.config/
+
   echo "Fastfetch importado!"
   notify-send "Configuração importada" "As configurações do Fastfetch foram definidas."
+  
+  omarchy-launch-about
 }
 
 import_containers() {
@@ -144,6 +170,7 @@ import_containers() {
   backup_if_exists ~/dev/containers
   cp -r ./containers ~/dev/
   cp ~/dev/containers/ngrok/.env.example ~/dev/containers/ngrok/.env
+
   echo "Containers importados!"
   notify-send "Configuração importada" "As configurações dos Containers foram definidas."
 }
@@ -152,6 +179,7 @@ import_xcompose() {
   echo "Importando XCompose..."
   backup_if_exists ~/.XCompose
   cp -r ./xcompose/.XCompose ~/
+
   echo "XCompose importado!"
   notify-send "Configuração importada" "As configurações do XCompose foram definidas."
 }
