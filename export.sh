@@ -20,18 +20,36 @@ check_git_changes() {
   git status -s
   echo ""
 
-  local resp
-  read -rp "Deseja realizar um commit dessas alterações? [S/n]: " resp
-  resp=${resp:-S}
+  local resp commit_msg push_resp
+
+  if has_walker; then
+    resp=$(echo -e "Sim\nNão" | walker --dmenu --width 495 --minheight 1 --maxheight 200 -p "Deseja realizar commit das alterações?" 2>/dev/null | tail -n 1)
+    [[ "$resp" == "Sim" ]] && resp="S" || resp="N"
+  else
+    read -rp "Deseja realizar um commit dessas alterações? [S/n]: " resp
+    resp=${resp:-S}
+  fi
+
   if [[ "$resp" =~ ^[SsYy]$ ]]; then
-    read -rp "Digite a mensagem do commit: " commit_msg
+    if has_walker; then
+      commit_msg=$(walker --dmenu --width 400 --minheight 1 --maxheight 200 -p "Mensagem do commit:" 2>/dev/null)
+    else
+      read -rp "Digite a mensagem do commit: " commit_msg
+    fi
     commit_msg=${commit_msg:-"Atualização automática de configurações"}
+
     git add .
     git commit -m "$commit_msg"
     echo "Commit realizado com sucesso."
 
-    read -rp "Deseja realizar um 'git push'? [S/n]: " push_resp
-    push_resp=${push_resp:-S}
+    if has_walker; then
+      push_resp=$(echo -e "Sim\nNão" | walker --dmenu --width 295 --minheight 1 --maxheight 200 -p "Deseja realizar git push?" 2>/dev/null | tail -n 1)
+      [[ "$push_resp" == "Sim" ]] && push_resp="S" || push_resp="N"
+    else
+      read -rp "Deseja realizar um 'git push'? [S/n]: " push_resp
+      push_resp=${push_resp:-S}
+    fi
+
     if [[ "$push_resp" =~ ^[SsYy]$ ]]; then
       git push
       echo "Alterações enviadas para o repositório remoto."
