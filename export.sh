@@ -4,6 +4,46 @@ has_walker() {
   command -v walker &>/dev/null
 }
 
+check_git_changes() {
+  if [ ! -d .git ]; then
+    echo "Este diretório não é um repositório Git. Pulando verificação de alterações."
+    return
+  fi
+
+  if ! git status --porcelain | grep -q .; then
+    echo "Nenhuma alteração detectada no repositório."
+    return
+  fi
+
+  echo ""
+  echo "Foram detectadas alterações no repositório local!"
+  git status -s
+  echo ""
+
+  local resp
+  read -rp "Deseja realizar um commit dessas alterações? [S/n]: " resp
+  resp=${resp:-S}
+  if [[ "$resp" =~ ^[SsYy]$ ]]; then
+    read -rp "Digite a mensagem do commit: " commit_msg
+    commit_msg=${commit_msg:-"Atualização automática de configurações"}
+    git add .
+    git commit -m "$commit_msg"
+    echo "Commit realizado com sucesso."
+
+    read -rp "Deseja realizar um 'git push'? [S/n]: " push_resp
+    push_resp=${push_resp:-S}
+    if [[ "$push_resp" =~ ^[SsYy]$ ]]; then
+      git push
+      echo "Alterações enviadas para o repositório remoto."
+      notify-send "Git Push realizado" "Alterações enviadas para o repositório remoto com sucesso."
+    else
+      echo "Push ignorado."
+    fi
+  else
+    echo "Commit ignorado."
+  fi
+}
+
 reset() {
   echo "Limpando diretórios antigos..."
   rm -rf ./hypr ./waybar ./walker ./alacritty ./uwsm ./omarchy \
@@ -132,6 +172,8 @@ export_all() {
   export_containers
   export_xcompose
   echo "Exportação completa!"
+
+  check_git_changes
 }
 
 # =====
