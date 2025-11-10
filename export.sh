@@ -32,7 +32,7 @@ check_git_changes() {
 
   if [[ "$resp" =~ ^[SsYy]$ ]]; then
     if has_walker; then
-      commit_msg=$(walker --dmenu --width 400 --minheight 1 --maxheight 200 -p "Mensagem do commit:" 2>/dev/null)
+      commit_msg=$(walker --dmenu --width 500 --minheight 1 --maxheight 200 -p "Mensagem do commit:" 2>/dev/null)
     else
       read -rp "Digite a mensagem do commit: " commit_msg
     fi
@@ -43,7 +43,7 @@ check_git_changes() {
     echo "Commit realizado com sucesso."
 
     if has_walker; then
-      push_resp=$(echo -e "Sim\nNão" | walker --dmenu --width 295 --minheight 1 --maxheight 200 -p "Deseja realizar git push?" 2>/dev/null | tail -n 1)
+      push_resp=$(echo -e "Sim\nNão" | walker --dmenu --width 495 --minheight 1 --maxheight 200 -p "Deseja realizar git push?" 2>/dev/null | tail -n 1)
       [[ "$push_resp" == "Sim" ]] && push_resp="S" || push_resp="N"
     else
       read -rp "Deseja realizar um 'git push'? [S/n]: " push_resp
