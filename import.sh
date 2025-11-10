@@ -4,6 +4,23 @@ has_walker() {
   command -v walker &>/dev/null
 }
 
+check_dependencies() {
+  local deps=("git" "cpa" "mv" "chmod" "notify-send")
+  for dep in "${deps[@]}"; do
+    if ! command -v "$dep" &>/dev/null; then
+      notify-send "Atenção" "Dependência ausente: $dep"
+      missing=1
+    fi
+  done
+
+  local extras=("zsha" "hyprctl" "waybar" "alacritty" "nvim" "code" "fastfetch")
+  for dep in "${extras[@]}"; do
+    command -v "$dep" &>/dev/null || notify-send "Atenção" "Opcional ausente: $dep"
+  done
+
+  [ "$missing" = "1" ] && { echo "Instale as dependências acima antes de continuar"; exit 1; }
+}
+
 backup_if_exists() {
   local target="$1"
   local bak_target="${target}.bak"
@@ -219,6 +236,8 @@ show_menu() {
 12) Containers
 13) XCompose"
 
+  check_dependencies
+  
   echo "$options"
 }
 
