@@ -220,6 +220,7 @@ import_all() {
   import_omarchy
   import_nvim
   import_vscode
+  import_zed
   import_fastfetch
   import_containers
   import_xcompose

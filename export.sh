@@ -194,6 +194,7 @@ export_all() {
   export_omarchy
   export_nvim
   export_vscode
+  export_zed
   export_fastfetch
   export_containers
   export_xcompose
