@@ -1,6 +1,6 @@
 # Meus dotfiles
 
-Repositório com minhas configurações pessoais do [Omarchy](https://omarchy.org/).  
+Repositório com minhas configurações pessoais do [Omarchy](https://omarchy.org/).
 Inclui scripts para **backup** e **restauração** de dotfiles.
 
 > **Confira também:**
@@ -55,6 +55,7 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 | `uwsm/`          | Configurações do [UWsm](https://github.com/Vladimir-csp/uwsm)            |
 | `nvim/`          | Configuração do [Neovim](https://neovim.io/)                             |
 | `vscode/`        | Configurações do [VS Code](https://code.visualstudio.com/)               |
+| `zed/`           | Configurações do [Zed](https://zed.dev/)                                 |
 | `fastfetch/`     | Utilitário [Fastfetch](https://github.com/fastfetch-cli/fastfetch)       |
 | `containers/`    | Arquivos `docker-compose` para serviços (MySQL, PostgreSQL, Ngrok, etc.) |
 | `xcompose/`      | Arquivo `.XCompose` de composição de teclas personalizadas               |
@@ -113,7 +114,7 @@ O script `import.sh` aplica as configurações do repositório no seu sistema.
 
 3. Os arquivos serão copiados para os diretórios correspondentes.
 > Exemplo: `./hypr/` → `~/.config/hypr/`
-> 
+>
 
 ---
 

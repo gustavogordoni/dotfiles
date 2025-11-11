@@ -58,6 +58,7 @@ Includes scripts for **backup** and **restoration** of dotfiles.
 | `uwsm/`          | [UWsm](https://github.com/Vladimir-csp/uwsm) configuration            |
 | `nvim/`          | [Neovim](https://neovim.io/) configuration                            |
 | `vscode/`        | [VS Code](https://code.visualstudio.com/) configuration               |
+| `zed/`           | [Zed](https://zed.dev/) configuration                                 |
 | `fastfetch/`     | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) configuration |
 | `containers/`    | `docker-compose` files for services (MySQL, PostgreSQL, Ngrok, etc.)  |
 | `xcompose/`      | Custom `.XCompose` keyboard composition file                          |
