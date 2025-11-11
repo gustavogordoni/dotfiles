@@ -148,6 +148,14 @@ export_vscode() {
   notify-send "Configuração exportada" "As configurações do VSCode foram copiadas."
 }
 
+export_zed() {
+  echo "Exportando Zed..."
+  mkdir -p ./zed
+  cp -r ~/.config/zed/* ./zed/
+  echo "Zed exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Zed foram copiadas."
+}
+
 export_fastfetch() {
   echo "Exportando Fastfetch..."
   mkdir -p ./fastfetch
@@ -209,9 +217,10 @@ show_menu() {
 8) Omarchy Branding
 9) Neovim
 10) VSCode
-11) Fastfetch
-12) Containers
-13) XCompose"
+11) Zed
+12) Fastfetch
+13) Containers
+14) XCompose"
 
   echo "$options"
 }
@@ -246,9 +255,10 @@ while true; do
     8) export_omarchy ;;
     9) export_nvim ;;
     10) export_vscode ;;
-    11) export_fastfetch ;;
-    12) export_containers ;;
-    13) export_xcompose ;;
+    11) export_zed ;;
+    12) export_fastfetch ;;
+    13) export_containers ;;
+    14) export_xcompose ;;
     *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
 

@@ -169,6 +169,15 @@ import_vscode() {
   notify-send "Configuração importada" "As configurações do VSCode foram definidas."
 }
 
+import_zed() {
+  echo "Importando Zed..."
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/zed
+  cp -r ./zed ~/.config/
+  echo "Zed importado!"
+  notify-send "Configuração importada" "As configurações do Zed foram definidas."
+}
+
 import_fastfetch() {
   echo "Importando Fastfetch..."
   mkdir -p ~/.config
@@ -232,12 +241,13 @@ show_menu() {
 8) Omarchy Branding
 9) Neovim
 10) VSCode
-11) Fastfetch
-12) Containers
-13) XCompose"
+11) Zed
+12) Fastfetch
+13) Containers
+14) XCompose"
 
   check_dependencies
-  
+
   echo "$options"
 }
 
@@ -271,9 +281,10 @@ while true; do
     8) import_omarchy ;;
     9) import_nvim ;;
     10) import_vscode ;;
-    11) import_fastfetch ;;
-    12) import_containers ;;
-    13) import_xcompose ;;    
+    11) import_zed ;;
+    12) import_fastfetch ;;
+    13) import_containers ;;
+    14) import_xcompose ;;
     *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
 

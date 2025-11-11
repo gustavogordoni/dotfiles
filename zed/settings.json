@@ -1,0 +1,56 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "agent_ui_font_size": 14.0,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "disable_ai": true,
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme"
+  },
+  "terminal": {
+    "font_family": "JetBrains Nerd Font"
+  },
+  "project_panel": {
+    "hide_gitignore": true,
+    "default_width": 240.0,
+    "dock": "left",
+    "auto_fold_dirs": false
+  },
+  "base_keymap": "VSCode",
+  "status_bar": {
+    "experimental.show": false
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "autosave": "on_window_change",
+  "buffer_font_family": "JetBrains Nerd Font",
+  "file_types": {
+    "html": ["*.embeddedhtml", "*.blade.php"]
+  },
+  "show_edit_predictions": true,
+  "indent_guides": {
+    "enabled": true
+  },
+  "soft_wrap": "editor_width",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Dracula"
+  }
+}
