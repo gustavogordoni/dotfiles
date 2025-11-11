@@ -66,7 +66,7 @@ import_zsh() {
   backup_if_exists ~/.oh-my-zsh/custom/aliases.zsh
   cp -r ./zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
   backup_if_exists ~/.p10k.zsh
-  
+
   # Theme dependencies
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
@@ -96,7 +96,7 @@ import_waybar() {
   echo "Importando Waybar..."
   mkdir -p ~/.config
   backup_if_exists ~/.config/waybar
-  
+
   cp -r ./waybar ~/.config/
   chmod -R u+x ~/.config/waybar/scripts
 
@@ -133,6 +133,15 @@ import_alacritty() {
   notify-send "Configuração importada" "As configurações do Alacritty foram definidas."
 }
 
+import_btop() {
+  echo "Importando Btop..."
+  mkdir -p ~/.config
+  backup_if_exists ~/.config/btop
+  cp -r ./btop ~/.config/
+  echo "Btop importado!"
+  notify-send "Configuração importada" "As configurações do Btop foram definidas."
+}
+
 import_uwsm() {
   echo "Importando UWSM..."
   mkdir -p ~/.config
@@ -146,7 +155,7 @@ import_omarchy() {
   echo "Importando Omarchy Branding..."
   mkdir -p ~/.config/omarchy
   backup_if_exists ~/.config/omarchy/branding
-  cp -r ./omarchy/branding ~/.config/omarchy/  
+  cp -r ./omarchy/branding ~/.config/omarchy/
   echo "Omarchy Branding importado!"
   notify-send "Arquivos importados" "Os arquivos do Omarchy Branding foram definidos."
 }
@@ -186,7 +195,7 @@ import_fastfetch() {
 
   echo "Fastfetch importado!"
   notify-send "Configuração importada" "As configurações do Fastfetch foram definidas."
-  
+
   omarchy-launch-about
 }
 
@@ -216,6 +225,7 @@ import_all() {
   import_waybar
   import_walker
   import_alacritty
+  import_btop
   import_uwsm
   import_omarchy
   import_nvim
@@ -238,14 +248,15 @@ show_menu() {
 4) Waybar
 5) Walker
 6) Alacritty
-7) UWSM
-8) Omarchy Branding
-9) Neovim
-10) VSCode
-11) Zed
-12) Fastfetch
-13) Containers
-14) XCompose"
+7) Btop
+8) UWSM
+9) Omarchy Branding
+10) Neovim
+11) VSCode
+12) Zed
+13) Fastfetch
+14) Containers
+15) XCompose"
 
   check_dependencies
 
@@ -278,14 +289,15 @@ while true; do
     4) import_waybar ;;
     5) import_walker ;;
     6) import_alacritty ;;
-    7) import_uwsm ;;
-    8) import_omarchy ;;
-    9) import_nvim ;;
-    10) import_vscode ;;
-    11) import_zed ;;
-    12) import_fastfetch ;;
-    13) import_containers ;;
-    14) import_xcompose ;;
+    7) import_btop ;;
+    8) import_uwsm ;;
+    9) import_omarchy ;;
+    10) import_nvim ;;
+    11) import_vscode ;;
+    12) import_zed ;;
+    13) import_fastfetch ;;
+    14) import_containers ;;
+    15) import_xcompose ;;
     *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
 

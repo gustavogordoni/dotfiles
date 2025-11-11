@@ -112,6 +112,14 @@ export_alacritty() {
   notify-send "Configuração exportada" "As configurações do Alacritty foram copiadas."
 }
 
+export_btop() {
+  echo "Exportando Btop..."
+  mkdir -p ./btop
+  cp -r ~/.config/btop/* ./btop/
+  echo "Btop exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Btop foram copiadas."
+}
+
 export_uwsm() {
   echo "Exportando UWSM..."
   mkdir -p ./uwsm
@@ -190,6 +198,7 @@ export_all() {
   export_waybar
   export_walker
   export_alacritty
+  export_btop
   export_uwsm
   export_omarchy
   export_nvim
@@ -214,14 +223,15 @@ show_menu() {
 4) Waybar
 5) Walker
 6) Alacritty
-7) UWSM
-8) Omarchy Branding
-9) Neovim
-10) VSCode
-11) Zed
-12) Fastfetch
-13) Containers
-14) XCompose"
+7) Btop
+8) UWSM
+9) Omarchy Branding
+10) Neovim
+11) VSCode
+12) Zed
+13) Fastfetch
+14) Containers
+15) XCompose"
 
   echo "$options"
 }
@@ -252,14 +262,15 @@ while true; do
     4) export_waybar ;;
     5) export_walker ;;
     6) export_alacritty ;;
-    7) export_uwsm ;;
-    8) export_omarchy ;;
-    9) export_nvim ;;
-    10) export_vscode ;;
-    11) export_zed ;;
-    12) export_fastfetch ;;
-    13) export_containers ;;
-    14) export_xcompose ;;
+    7) export_btop ;;
+    8) export_uwsm ;;
+    9) export_omarchy ;;
+    10) export_nvim ;;
+    11) export_vscode ;;
+    12) export_zed ;;
+    13) export_fastfetch ;;
+    14) export_containers ;;
+    15) export_xcompose ;;
     *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
 
