@@ -24,14 +24,14 @@
     "font_family": "JetBrains Nerd Font"
   },
   "project_panel": {
-    "hide_gitignore": true,
+    "hide_gitignore": false,
     "default_width": 240.0,
     "dock": "left",
     "auto_fold_dirs": false
   },
   "base_keymap": "VSCode",
   "status_bar": {
-    "experimental.show": false
+    "experimental.show": true
   },
   "minimap": {
     "show": "never"
@@ -51,6 +51,6 @@
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Dracula"
+    "dark": "macOS Classic Dark"
   }
 }
