@@ -1,5 +1,5 @@
 # Changes require a relaunch of Hyprland to take effect.
 
 export TERMINAL=xdg-terminal-exec
-export EDITOR=code
+export EDITOR=zeditor
 export BROWSER=firefox
