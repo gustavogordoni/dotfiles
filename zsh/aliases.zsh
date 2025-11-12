@@ -47,6 +47,7 @@ alias ngrok-static='docker compose -f $HOME/dev/containers/ngrok/docker-compose-
 alias scan='$HOME/dev/pentest/scanweb.sh'
 alias java-listar-versao='archlinux-java status'
 alias java-alterar-versao='sudo archlinux-java set'
+alias vim='nvim'
 
 # alias setoolkit='sudo python3 ~/.config/setoolkit/setoolkit'
 alias setoolkit='sudo docker run --rm -it --net=host --cap-add=NET_ADMIN \

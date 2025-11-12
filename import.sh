@@ -202,12 +202,10 @@ import_fastfetch() {
 import_firefox() {
   echo "Importando Firefox..."
 
-  local firefox_dir="$HOME/.mozilla/firefox"
+  local firefox_dirlocal firefox_dir="$HOME/.mozilla/firefox"
 
-  # local profile_dir
-  # profile_dir=$(find "$firefox_dir" -maxdepth 1 -type d -name "*.default-release" | head -n 1)
-
-  local profile_dir = $(find "$firefox_dir" -maxdepth 1 -type d -name "*.default-release" | head -n 1)
+  local profile_dir
+  profile_dir=$(find "$firefox_dir" -maxdepth 1 -type d -name "*.default-release" | head -n 1)
 
   if [ -z "$profile_dir" ]; then
     echo "Nenhum perfil Firefox encontrado!"
