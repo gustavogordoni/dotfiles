@@ -220,4 +220,6 @@ Algumas das funcionalidades a seguir já existem por padrão no Omarchy, entreta
 
 [HANCORE-linux/waybar-themes](https://github.com/HANCORE-linux/waybar-themes) <br>
 
-[imbypass/omarchy-waybar-bepi](https://github.com/imbypass/omarchy-waybar-bepi)
+[imbypass/omarchy-waybar-bepi](https://github.com/imbypass/omarchy-waybar-bepi) <br>
+
+[datguypiko/Firefox-Mod-Blur](https://github.com/datguypiko/Firefox-Mod-Blur)

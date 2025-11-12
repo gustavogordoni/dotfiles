@@ -226,4 +226,6 @@ Some of the following functions already exist by default in Omarchy, but use dif
 
 [HANCORE-linux/waybar-themes](https://github.com/HANCORE-linux/waybar-themes) <br>
 
-[imbypass/omarchy-waybar-bepi](https://github.com/imbypass/omarchy-waybar-bepi)
+[imbypass/omarchy-waybar-bepi](https://github.com/imbypass/omarchy-waybar-bepi) <br>
+
+[datguypiko/Firefox-Mod-Blur](https://github.com/datguypiko/Firefox-Mod-Blur)
