@@ -173,6 +173,14 @@ export_fastfetch() {
   notify-send "Configuração exportada" "As configurações do Fastfetch foram copiadas."
 }
 
+export_firefox() {
+  echo "Exportando Firefox..."
+  mkdir -p ./firefox
+  cp -r ~/.mozilla/firefox/z1a2vzup.default-release/chrome/* ./firefox/
+  echo "Firefox exportado com sucesso!"
+  notify-send "Configuração exportada" "As configurações do Firefox foram copiadas."
+}
+
 export_containers() {
   echo "Exportando Containers..."
   mkdir -p ./containers/ngrok
@@ -205,6 +213,7 @@ export_all() {
   export_vscode
   export_zed
   export_fastfetch
+  export_firefox
   export_containers
   export_xcompose
   echo "Exportação completa!"
@@ -230,8 +239,9 @@ show_menu() {
 11) VSCode
 12) Zed
 13) Fastfetch
-14) Containers
-15) XCompose"
+14) Firefox
+15) Containers
+16) XCompose"
 
   echo "$options"
 }
@@ -269,8 +279,9 @@ while true; do
     11) export_vscode ;;
     12) export_zed ;;
     13) export_fastfetch ;;
-    14) export_containers ;;
-    15) export_xcompose ;;
+    14) export_firefox ;;
+    15) export_containers ;;
+    16) export_xcompose ;;
     *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
 

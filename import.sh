@@ -13,7 +13,7 @@ check_dependencies() {
     fi
   done
 
-  local extras=("zsh" "hyprctl" "waybar" "alacritty" "nvim" "code" "fastfetch")
+  local extras=("zsh" "hyprctl" "waybar" "alacritty" "nvim" "code" "fastfetch" "firefox")
   for dep in "${extras[@]}"; do
     command -v "$dep" &>/dev/null || notify-send "Atenção" "Opcional ausente: $dep"
   done
@@ -199,6 +199,45 @@ import_fastfetch() {
   omarchy-launch-about
 }
 
+import_firefox() {
+  echo "Importando Firefox..."
+
+  local firefox_dir="$HOME/.mozilla/firefox"
+
+  # local profile_dir
+  # profile_dir=$(find "$firefox_dir" -maxdepth 1 -type d -name "*.default-release" | head -n 1)
+
+  local profile_dir = $(find "$firefox_dir" -maxdepth 1 -type d -name "*.default-release" | head -n 1)
+
+  if [ -z "$profile_dir" ]; then
+    echo "Nenhum perfil Firefox encontrado!"
+    echo "Abra o Firefox ao menos uma vez e verifique o caminho em: about:support"
+    notify-send "Firefox" "Nenhum perfil encontrado. Abra o Firefox antes de importar."
+    return 1
+  fi
+
+  local chrome_dir="$profile_dir/chrome"
+
+  echo "Perfil detectado: $profile_dir"
+  mkdir -p "$chrome_dir"
+
+  backup_if_exists "$chrome_dir"
+
+  cp -r ./firefox/* "$chrome_dir/"
+
+  echo "Arquivos copiados para: $chrome_dir"
+  echo ""
+  echo "Passos manuais necessários:"
+  echo "- Abra o Firefox e vá até 'about:config'."
+  echo "- Busque por: toolkit.legacyUserProfileCustomizations.stylesheets"
+  echo "- Defina como: true"
+  echo "- Reinicie o Firefox."
+  echo ""
+  echo "Dica: O tema será aplicado automaticamente após o reinício."
+
+  notify-send "Configuração importada" "Tema do Firefox instalado no perfil detectado."
+}
+
 import_containers() {
   echo "Importando Containers..."
   mkdir -p ~/dev
@@ -232,6 +271,7 @@ import_all() {
   import_vscode
   import_zed
   import_fastfetch
+  import_firefox
   import_containers
   import_xcompose
   echo "Importação completa!"
@@ -255,8 +295,9 @@ show_menu() {
 11) VSCode
 12) Zed
 13) Fastfetch
-14) Containers
-15) XCompose"
+14) Firefox
+15) Containers
+16) XCompose"
 
   check_dependencies
 
@@ -296,8 +337,9 @@ while true; do
     11) import_vscode ;;
     12) import_zed ;;
     13) import_fastfetch ;;
-    14) import_containers ;;
-    15) import_xcompose ;;
+    14) import_firefox ;;
+    15) import_containers ;;
+    16) import_xcompose ;;
     *) [ -n "$opt" ] && echo "Opção inválida!" ;;
   esac
 
