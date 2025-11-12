@@ -5,7 +5,7 @@ has_walker() {
 }
 
 check_dependencies() {
-  local deps=("git" "cpa" "mv" "chmod" "notify-send")
+  local deps=("git" "cp" "mv" "chmod" "notify-send")
   for dep in "${deps[@]}"; do
     if ! command -v "$dep" &>/dev/null; then
       notify-send "Atenção" "Dependência ausente: $dep"
@@ -13,7 +13,7 @@ check_dependencies() {
     fi
   done
 
-  local extras=("zsha" "hyprctl" "waybar" "alacritty" "nvim" "code" "fastfetch")
+  local extras=("zsh" "hyprctl" "waybar" "alacritty" "nvim" "code" "fastfetch")
   for dep in "${extras[@]}"; do
     command -v "$dep" &>/dev/null || notify-send "Atenção" "Opcional ausente: $dep"
   done
