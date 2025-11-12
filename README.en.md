@@ -47,21 +47,23 @@ Includes scripts for **backup** and **restoration** of dotfiles.
 
 ### Included Folders
 
-| Folder           | Description                                                           |
-| ---------------- | --------------------------------------------------------------------- |
-| `zsh/`           | [ZSH](https://www.zsh.org/) configuration                             |
-| `powerlevel10k/` | [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme       |
-| `hypr/`          | [Hyprland](https://hyprland.org/) configuration                       |
-| `waybar/`        | [Waybar](https://github.com/Alexays/Waybar) configuration             |
-| `walker/`        | [Walker](https://github.com/abenz1267/walker) launcher                |
-| `alacritty/`     | [Alacritty](https://alacritty.org/) terminal configuration            |
-| `uwsm/`          | [UWsm](https://github.com/Vladimir-csp/uwsm) configuration            |
-| `nvim/`          | [Neovim](https://neovim.io/) configuration                            |
-| `vscode/`        | [VS Code](https://code.visualstudio.com/) configuration               |
-| `zed/`           | [Zed](https://zed.dev/) configuration                                 |
-| `fastfetch/`     | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) configuration |
-| `containers/`    | `docker-compose` files for services (MySQL, PostgreSQL, Ngrok, etc.)  |
-| `xcompose/`      | Custom `.XCompose` keyboard composition file                          |
+| Folder           | Description                                                               |
+| ---------------- | ------------------------------------------------------------------------- |
+| `zsh/`           | [ZSH](https://www.zsh.org/) configuration                                 |
+| `powerlevel10k/` | [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme           |
+| `hypr/`          | [Hyprland](https://hyprland.org/) configuration                           |
+| `waybar/`        | [Waybar](https://github.com/Alexays/Waybar) configuration                 |
+| `walker/`        | [Walker](https://github.com/abenz1267/walker) launcher configuration      |
+| `alacritty/`     | [Alacritty](https://alacritty.org/) terminal configuration                |
+| `btop/`          | [Btop](https://github.com/aristocratos/btop) system monitor configuration |
+| `uwsm/`          | [UWsm](https://github.com/Vladimir-csp/uwsm) configuration                |
+| `nvim/`          | [Neovim](https://neovim.io/) configuration                                |
+| `vscode/`        | [VS Code](https://code.visualstudio.com/) configuration                   |
+| `zed/`           | [Zed](https://zed.dev/) configuration                                     |
+| `fastfetch/`     | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) configuration     |
+| `firefox/`       | [Firefox](https://www.firefox.com) browser configuration                  |
+| `containers/`    | `docker-compose` files for services (MySQL, PostgreSQL, Ngrok, etc.)      |
+| `xcompose/`      | Custom `.XCompose` key composition file                                   |
 
 ---
 

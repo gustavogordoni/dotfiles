@@ -44,21 +44,23 @@ Inclui scripts para **backup** e **restauração** de dotfiles.
 
 ### Pastas incluídas
 
-| Pasta            | Descrição                                                                |
-| ---------------- | ------------------------------------------------------------------------ |
-| `zsh/`           | Configurações do [ZSH](https://www.zsh.org/)                             |
-| `powerlevel10k/` | Tema do [Powerlevel10k](https://github.com/romkatv/powerlevel10k)        |
-| `hypr/`          | Configurações do [Hyprland](https://hyprland.org/)                       |
-| `waybar/`        | Configurações do [Waybar](https://github.com/Alexays/Waybar)             |
-| `walker/`        | Launcher [Walker](https://github.com/abenz1267/walker)                   |
-| `alacritty/`     | Terminal [Alacritty](https://alacritty.org/)                             |
-| `uwsm/`          | Configurações do [UWsm](https://github.com/Vladimir-csp/uwsm)            |
-| `nvim/`          | Configuração do [Neovim](https://neovim.io/)                             |
-| `vscode/`        | Configurações do [VS Code](https://code.visualstudio.com/)               |
-| `zed/`           | Configurações do [Zed](https://zed.dev/)                                 |
-| `fastfetch/`     | Utilitário [Fastfetch](https://github.com/fastfetch-cli/fastfetch)       |
-| `containers/`    | Arquivos `docker-compose` para serviços (MySQL, PostgreSQL, Ngrok, etc.) |
-| `xcompose/`      | Arquivo `.XCompose` de composição de teclas personalizadas               |
+| Pasta            | Descrição                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| `zsh/`           | Configurações do [ZSH](https://www.zsh.org/)                                        |
+| `powerlevel10k/` | Tema do [Powerlevel10k](https://github.com/romkatv/powerlevel10k)                   |
+| `hypr/`          | Configurações do [Hyprland](https://hyprland.org/)                                  |
+| `waybar/`        | Configurações do [Waybar](https://github.com/Alexays/Waybar)                        |
+| `walker/`        | Launcher [Walker](https://github.com/abenz1267/walker)                              |
+| `alacritty/`     | Configurações do terminal [Alacritty](https://alacritty.org/)                       |
+| `btop/`          | Configurações do monitor de sistema [Btop](https://github.com/aristocratos/btop)    |
+| `uwsm/`          | Configurações do [UWsm](https://github.com/Vladimir-csp/uwsm)                       |
+| `nvim/`          | Configurações do [Neovim](https://neovim.io/)                                       |
+| `vscode/`        | Configurações do [VS Code](https://code.visualstudio.com/)                          |
+| `zed/`           | Configurações do [Zed](https://zed.dev/)                                            |
+| `fastfetch/`     | Configurações do utilitário [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| `firefox/`       | Configurações do navegador [Firefox](https://www.firefox.com)                       |
+| `containers/`    | Arquivos `docker-compose` para serviços (MySQL, PostgreSQL, Ngrok, etc.)            |
+| `xcompose/`      | Arquivo `.XCompose` com composições de teclas personalizadas                        |
 
 ---
 
