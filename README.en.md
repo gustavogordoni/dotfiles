@@ -1,5 +1,14 @@
 # My Dotfiles
 
+<!--
+[![GitHub watchers](https://img.shields.io/github/watchers/gustavogordoni/dotfiles)](https://github.com/gustavogordoni/dotfiles/watchers/)
+[![GitHub forks](https://img.shields.io/github/forks/gustavogordoni/dotfiles)](https://github.com/gustavogordoni/dotfiles/network/)
+-->
+[![GitHub last commit](https://img.shields.io/github/last-commit/gustavogordoni/dotfiles?color=purple)](https://github.com/gustavogordoni/dotfiles/commits/)
+<!--
+[![License](https://img.shields.io/github/license/)](https://github.com/gustavogordoni/dotfiles/blob/omarchy/LICENSE)
+-->
+
 Repository containing my personal configurations for [Omarchy](https://omarchy.org/).
 Includes scripts for **backup** and **restoration** of dotfiles.
 
