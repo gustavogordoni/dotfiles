@@ -1,4 +1,4 @@
-{                     
+{                                   
   "update.mode": "none",
   "workbench.iconTheme": "material-icon-theme",
   "git.ignoreMissingGitWarning": true,
@@ -126,5 +126,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "chat.disableAIFeatures": true,
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "database-client.autoSync": true
 }

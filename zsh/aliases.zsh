@@ -48,9 +48,14 @@ alias scan='$HOME/dev/pentest/scanweb.sh'
 alias java-listar-versao='archlinux-java status'
 alias java-alterar-versao='sudo archlinux-java set'
 alias vim='nvim'
+# alias code='zeditor'
 
-# alias setoolkit='sudo python3 ~/.config/setoolkit/setoolkit'
+# alias setoolkit='sudo docker run --rm -it --net=host --cap-add=NET_ADMIN \
+#   -v $HOME/dev/siteClone:$HOME/dev/siteClone \
+#   -v /root/.set/reports:/root/.set/reports \
+#   setoolkit:py-slim'
+
 alias setoolkit='sudo docker run --rm -it --net=host --cap-add=NET_ADMIN \
   -v $HOME/dev/siteClone:$HOME/dev/siteClone \
   -v /root/.set/reports:/root/.set/reports \
-  setoolkit:py-slim'
+  gustavogordoni/setoolkit'
