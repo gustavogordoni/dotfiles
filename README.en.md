@@ -142,7 +142,7 @@ The `import.sh` script applies the repository’s configurations to your system.
 | **SUPER + F**         | File manager (Nautilus)       | `exec, uwsm app -- nautilus --new-window`                                          |
 | **SUPER + B**         | Browser (Firefox)             | `exec, omarchy-launch-browser`                                                     |
 | **SUPER + SHIFT + B** | Browser (private)             | `exec, omarchy-launch-browser --private`                                           |
-| **SUPER + M**         | Music (Spotify)               | `exec, omarchy-launch-or-focus spotify`                                            |
+<!--| **SUPER + M**         | Music (Spotify)               | `exec, omarchy-launch-or-focus spotify`                                            |-->
 | **SUPER + N**         | Editor (VS Code)              | `exec, omarchy-launch-editor`                                                      |
 | **SUPER + SHIFT + D** | Docker (Lazydocker)           | `exec, uwsm app -- $TERMINAL -e lazydocker`                                        |
 | **SUPER + A**         | ChatGPT                       | `exec, omarchy-launch-webapp "https://chatgpt.com"`                                |
@@ -155,7 +155,7 @@ The `import.sh` script applies the repository’s configurations to your system.
 | **SUPER + G**         | Github                        | `exec, omarchy-launch-webapp "https://github.com/gustavogordoni?tab=repositories"` |
 | **SUPER + SHIFT + N** | NetBeans                      | `exec, netbeans`                                                                   |
 | **SUPER + SHIFT + C** | Calculator                    | `exec, gnome-calculator`                                                           |
-| **SUPER + SHIFT + M** | Monitor Picker                | `exec, ~/.config/hypr/scripts/hyprmon-picker.sh`                                   |
+| **SUPER + M**         | Monitor Picker                | `exec, ~/.config/hypr/scripts/hyprmon-picker.sh`                                   |
 | **SUPER + Z**         | Toggle Waybar Theme           | `exec, omarchy-theme-waybar`                                                       |
 | **SUPER + SHIFT + Z** | Toggle Waybar Theme (Test)    | `exec, omarchy-theme-waybar-test`                                                  |
 
