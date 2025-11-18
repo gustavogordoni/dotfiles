@@ -142,7 +142,6 @@ The `import.sh` script applies the repository’s configurations to your system.
 | **SUPER + F**         | File manager (Nautilus)       | `exec, uwsm app -- nautilus --new-window`                                          |
 | **SUPER + B**         | Browser (Firefox)             | `exec, omarchy-launch-browser`                                                     |
 | **SUPER + SHIFT + B** | Browser (private)             | `exec, omarchy-launch-browser --private`                                           |
-<!--| **SUPER + M**         | Music (Spotify)               | `exec, omarchy-launch-or-focus spotify`                                            |-->
 | **SUPER + N**         | Editor (VS Code)              | `exec, omarchy-launch-editor`                                                      |
 | **SUPER + SHIFT + D** | Docker (Lazydocker)           | `exec, uwsm app -- $TERMINAL -e lazydocker`                                        |
 | **SUPER + A**         | ChatGPT                       | `exec, omarchy-launch-webapp "https://chatgpt.com"`                                |
