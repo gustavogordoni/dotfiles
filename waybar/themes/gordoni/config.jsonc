@@ -17,10 +17,12 @@
     "custom/update",
     "custom/pacman",
     "custom/screenrecording-indicator"
+    // "custom/privacydots"
   ],
-  "modules-right": [
-    // "group/tray-expander",
+  "modules-right": [    
     "custom/usb",
+    // "group/tray-expander",
+    "custom/privacydots",
     "mpris",
     "backlight",
     "network",
@@ -50,7 +52,7 @@
       "class<org.gnome.Nautilus>": " ",
       "title<.*whatsapp.*>": " ",
       "class<.*netbeans.*>": " ",
-      "class<.*libreoffice.*>": " ",
+      "class<.*libreoffice.*>": " "
       // "class<.*libreoffice.*>": " ",
     },
     "format-icons": {
@@ -66,7 +68,6 @@
       "9": "9",
       "active": "󱓻"
       // "active": ""
-      
     },
     "persistent-workspaces": {
       "1": [],
@@ -119,7 +120,7 @@
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b>{}</b></span>"
       }
-    }    
+    }
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -179,7 +180,7 @@
       "transition-duration": 600,
       "children-class": "tray-group-item"
     },
-    "modules": ["custom/expand-icon", "tray", "memory", "custom/weather"]
+    "modules": ["custom/expand-icon", "custom/privacydots"]
   },
   "custom/expand-icon": {
     "format": " ",
@@ -207,9 +208,9 @@
   "backlight": {
     "format": "{icon} {percent}%",
     // "format-icons": [""]
-    "format-icons": [      
+    "format-icons": [
       "󰽤",
-      
+
       "",
       "",
       "",
@@ -222,8 +223,8 @@
       "",
       "",
       "",
-      "",      
-           
+      "",
+
       ""
     ]
   },
@@ -265,5 +266,15 @@
   },
   "hyprland/window": {
     "format": "{}"
+  },
+
+  "custom/privacydots": {
+    "exec": "~/.config/waybar/scripts/privacydots.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{text}",
+    "tooltip": true,
+    "escape": false,
+    "markup": "pango"
   }
 }

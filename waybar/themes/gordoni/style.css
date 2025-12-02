@@ -48,6 +48,7 @@ mpris.empty {
 #pulseaudio,
 #custom-omarchy,
 #custom-screenrecording-indicator,
+#custom-privacydots,
 #custom-update {
   background-color: @background;
   min-width: 12px;
