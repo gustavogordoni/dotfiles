@@ -1,4 +1,4 @@
-# Meus dotfiles
+# Dotfiles
 
 <!--[![GitHub watchers](https://img.shields.io/github/watchers/gustavogordoni/dotfiles)](https://github.com/gustavogordoni/dotfiles/watchers/)-->
 <!--[![GitHub forks](https://img.shields.io/github/forks/gustavogordoni/dotfiles)](https://github.com/gustavogordoni/dotfiles/network/)-->
